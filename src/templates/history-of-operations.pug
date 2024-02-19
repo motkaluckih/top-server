@@ -1,0 +1,34 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "finance";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+    section.lk-settings
+        h3.lk-settings__title Финансы
+        .lk-settings__slider.slider
+            ul.lk-settings__list.slider-wrapper   
+                li.lk-settings__item 
+                    a.lk-settings__btn(href="./finance.html") Баланс
+                li.lk-settings__item 
+                    a.lk-settings__btn.action(href="./history-of-operations.html") История операций 
+                    
+        .card-lk.card-lk_container.action
+            .table-responsive-lg.table-wrapper.table-responsive-lg
+                table.table.table_border-none
+                    tbody.table__tbody.table__tbody_stretch-w.table__tbody_last-right
+                            tr
+                                td.table__text 
+                                    p 10/04/2023 22:44
+                                    span Продление услуги #301457
+                                td -4 734 ₽
+                            tr
+                                td.table__text 
+                                    p 10/04/2023 22:45
+                                    span Пополнение баланса
+                                td.table__green +5 000 ₽ 

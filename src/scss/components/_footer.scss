@@ -1,0 +1,150 @@
+// .footer ====================================================================================================
+.footer {
+  padding: 100px 0 0;
+  background-color: $color-blue;
+
+  @include media-breakpoint-down(lg) {
+      padding: 50px 0 0;
+  }
+  
+  &__top {
+    padding-bottom: 60px;
+
+    @include media-breakpoint-down(lg) {
+      padding-bottom: 50px;
+    }
+    button {
+
+      .icon {
+        display: none;
+        width: 24px;
+        height: 24px;
+        fill: $color-light;
+
+        @include media-breakpoint-down(lg) {
+          display: flex;
+        }
+      }
+      
+    }
+
+      [data-accordion-body] {
+        overflow: visible;
+        max-height: initial;
+
+        @include media-breakpoint-down(lg) {
+          overflow: hidden;
+          max-height: 0;
+        }
+      }
+
+      & .active {
+        button {
+          .icon {
+            fill: $color-red;
+            transform: rotate(180deg)
+          }
+        }
+      }
+  }
+
+
+  &__copy {
+    padding: 15px 0;
+    border-top: $border-gray-08;
+  }
+
+  &__social {
+    display: flex;
+    @include list-reset;
+    gap: 40px;
+    
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background-color: $color-light;
+      
+      a {
+        width: 35px;
+        height: 35px;
+
+      }
+    }
+    .icon {
+      width: 100%;
+      height: 100%;
+      fill: $color-blue;
+    }
+  }
+  
+  &__info {
+      img {
+        max-height: 20px;
+        margin-bottom: 20px;
+      }
+  }
+
+  &__contact {
+    &:not(:last-child){
+      margin-bottom: 30px;
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &:last-child {
+      @include media-breakpoint-down(lg) {
+        margin-top: 35px;
+      }
+    }
+  }
+  
+  button {
+    padding: 0;
+    margin-bottom: 20px;
+    @include fontCompressor(20px, 700, 28px);
+  }
+
+  a {
+    text-decoration: none;
+  } 
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+}
+
+// .footer-menu ====================================================================================================
+.footer-menu {
+  list-style: none;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    
+      p,
+      a {
+        &:hover,
+        &:active {
+          color: $color-red;
+        }
+    
+        &:focus-visible {
+          color: $color-red-default;
+        }
+      }
+
+    }
+
+}

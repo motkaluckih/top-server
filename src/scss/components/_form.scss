@@ -1,0 +1,335 @@
+//.custom-checkbox ========================================================================
+.custom-checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+
+	&_small-text {
+		&+label {
+			@include fontCompressor(12px, 400, 16px);
+		}
+	}
+
+	&+label {
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		user-select: none;
+		color: $color-gray-400;
+		flex-direction: row;
+		@include fontCompressor(16px, 300, 23px);
+
+		
+
+		a {
+			color: $color-black;
+			text-decoration: none;
+			span {
+				margin-left: 3px;
+				text-decoration: none;
+			}
+
+			&:hover {
+				span {
+					text-decoration: none;
+				}
+			}
+		}
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			flex-shrink: 0;
+			flex-grow: 0;
+			border: 1px solid $color-gray-200;
+			border-radius: 3px;
+			margin-right: 8px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 50% 50%;
+		}
+	}
+
+	&:not(:disabled):not(:checked)+label:hover::before {
+		border-color: $color-gray-400;
+	}
+
+	&:not(:disabled):active+label::before {
+		background-color: $color-red;
+		border-color: $color-red-dark;
+	}
+
+	&:focus:not(:checked)+label::before {
+		border-color: #adb5bd;;
+	}
+	
+	&:checked+label::before {
+		background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18' height='18' rx='3' fill='%23BF0204'/%3E%3Cpath d='M6.575 11.175L12.475 5.275C12.6583 5.09167 12.8917 5 13.175 5C13.4583 5 13.6917 5.09167 13.875 5.275C14.0583 5.45833 14.15 5.69167 14.15 5.975C14.15 6.25833 14.0583 6.49167 13.875 6.675L7.275 13.275C7.075 13.475 6.84167 13.575 6.575 13.575C6.30833 13.575 6.075 13.475 5.875 13.275L3.275 10.675C3.09167 10.4917 3 10.2583 3 9.975C3 9.69167 3.09167 9.45833 3.275 9.275C3.45833 9.09167 3.69167 9 3.975 9C4.25833 9 4.49167 9.09167 4.675 9.275L6.575 11.175Z' fill='white'/%3E%3C/svg%3E");
+		background-size: 19px 17px;
+		border: none;
+	}
+
+	&:checked+label span {
+		color: $color-black;
+	}
+
+	&:disabled+label::before {
+		background-color: $color-black;
+	}
+}
+
+// .form-label ====================================================================================================
+.form-label {
+	&__item {
+		width: calc(191/975*100%);
+	}
+
+	& > span {
+		display: block;
+		margin-bottom: 15px;
+
+		@include fontCompressor(20px, 500, 28px);
+		color: $color-black;
+	}
+}
+
+// .form-label ============================================================================
+.form-btn {
+
+	&_gray-center {
+		display: flex;
+		justify-content: center;
+		background-color: $color-gray-250;
+		width: 100%;
+	}
+
+	&_position-img {
+		position: relative;
+
+		img {
+			top: 50%;
+			left: 40px;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+}
+
+//form-select ========================================================================
+.form-select {
+	width: 100%;
+	max-width: 191px;
+	padding: 6px 30px;
+	@include fontCompressor(14px, 300, 19px);
+	background-color: $color-light;
+	border: $border-gray-300;
+	border-radius: 50px;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin-bottom: 12px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='12' viewBox='0 0 11 12' fill='none'%3E%3Cpath d='M3.2085 5.08337L5.50016 7.37504L7.79183 5.08337' stroke='black' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 11px center;
+		
+	
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 9px;
+		padding: 8px 16px 2px;
+		height: 60px;
+		@include fontCompressor(14px, 500, 20px);
+	}
+	
+	@include media-breakpoint-down(md) {
+		max-width: 100%;
+	}
+
+	&_center {
+		max-width: 221px;
+		padding-left: 60px;
+
+		@include media-breakpoint-down(lg) {
+			padding-left: 60px;
+			height: 45px;
+		}
+	}
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	&_transparent-center {
+		background-color: transparent;
+
+		@include media-breakpoint-down(lg) {
+			padding: 8px 35px;
+		}
+	}
+
+	&_w-container {
+		width: initial;
+		max-width: initial;
+
+		@include media-breakpoint-down(lg) {
+			padding: 6px 30px;
+			@include fontCompressor(12px, 500, 1);
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: initial;
+			padding: 6px 8px;
+		}
+	}
+
+}
+
+// .form-slider ====================================================================================================
+.form-slider {
+	position: relative;
+	width: 100%;
+	margin-bottom: 25px;
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 13px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	input {
+		margin-bottom: 0;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+
+	&__label {
+		width: 100%;
+	}
+	
+	// .form-slider__input
+	&__input {
+		width: 100%;
+		height: 53px;
+		padding: 16px 15px 15px 10px;
+		@include fontCompressor(16px, 300, 22px);
+		background-color: $color-light;
+		border: 1px solid $color-gray-200;
+		border-radius: 10px;
+		margin-bottom: 25px;
+		
+		@include media-breakpoint-down(lg) {
+			height: 60px;
+			padding: 8px 16px 2px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+}
+
+//Для создания другова цвета в ползунке формы "range"
+.form-slider-red{
+	@include range-formater($color-red-default);
+}
+
+//form__group===============================================================
+.form__group {
+
+	.form__suptitl {
+		align-items: center;
+		margin-bottom: 10px;
+		@include fontCompressor(20px, 400, 28px);
+		color: $color-black;
+		.icon {
+			width: 24px;
+			height: 24px;
+			fill: $color-black;
+		}
+		
+	}
+
+	&.active{
+		[data-accordion-body] {
+			max-height: initial;
+			overflow: visible;
+		}
+	}
+	
+	&.active {
+		.form__suptitl {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.form-searck {
+	&__group {
+		position: relative;
+		margin-bottom: 70px;
+		
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 55px;
+		}
+	}
+
+	input {
+		width: 100%;
+		height: 76px;
+		padding: 27px;
+		padding-left: 15px;
+		border: $border-gray;
+		border-radius: $radius;
+		@include fontCompressor(16px, 300, 22px);
+		color: $color-black;
+
+		@include media-breakpoint-down(lg) {
+			padding: 10px;
+			max-height: 50px;
+			@include fontCompressor(12px, 300, 16px);
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 17px;
+		right: 17px;
+
+		@include media-breakpoint-down(lg) {
+			top: 6px;
+			right: 5px;
+			padding: 11px 12px;
+		}
+
+		span {
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
+	
+		.icon {
+			display: none;
+
+			@include media-breakpoint-down(lg) {
+				display: flex;
+			}
+
+			width: 16px;
+			height: 16px;
+			fill: transparent;
+			stroke: $color-light;
+		}
+
+	}
+	
+}

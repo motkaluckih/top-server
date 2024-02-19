@@ -1,0 +1,94 @@
+extends layouts/_default
+
+block vars
+    - 
+        let currentPage = "index";
+        let pageTitle = "Главная страница";
+        let listConfigurations = [
+                {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+                {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+                {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+                {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+            ]
+        let listServicse = [
+            {"title": "Миграция инфраструктуры в дата-центр", "text": "Преимущества очевидны: архитектура облачных решений позволяет адаптироваться к нагрузкам, а простота добавления новых сервисов."},
+            {"title": "Миграция инфраструктуры ", "text": "При организации миграции в дата-центр потребуется учесть множество факторов. Переезд, как правило, выполняется из офиса."},
+            {"title": "Миграция в облако", "text": "В этом случае осуществляется транспортировка имеющегося оборудования на новый адрес."},
+            {"title": "Миграция в облако", "text": "В этом случае осуществляется транспортировка имеющегося"},
+        ]
+        let area = "index"
+block content
+    include components/_advantage
+    section.product.section.section_bg-blue.section_pb-160
+        .container
+                .row.d-flex.justify-content-between.mb-55
+                    .col-12.col-lg-8
+                        h2.section-title.section-title_color-light.mb-4 Популярные конфигурации
+                        p Арендуйте физический сервер с запуском от 2 минут и бесплатной заменой комплектующих.Все его ресурсы — только ваши.
+                    .col-3.d-flex.justify-content-end.d-lg-flex.align-items-center.d-none
+                        a.section-link(href="#") Смотреть все
+                            +icon('the-arrow')
+                .row
+                    .col-12.slider.product__slider
+                        .product-list.slider-wrapper
+                            each item in listConfigurations
+                                    .product-item
+                                        .product-item__wrapper
+                                            h3.product-item__title #{item.title}
+                                            ul.product-item__list
+                                                li.product-item__element 
+                                                    +icon('cpu')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Процессор
+                                                        span #{item.processor}
+                                                li.product-item__element 
+                                                    +icon('inbox')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Память
+                                                        span #{item.memory}
+                                                li.product-item__element 
+                                                    +icon('speed-one')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Диски
+                                                        span #{item.disks}
+                                                li.product-item__element 
+                                                    +icon('sphere')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Приватная сеть 
+                                                        span #{item.network}
+                                            .product-item__btn-dom.product-item__btn-dom_pt-0
+                                                button.button.button_transparent-red.product-item__btn Заказать
+                        .slider-interface.slider-interface_center_decs
+                                    .slider-dots
+                                        .slider-dots__inner.product__dots-inner
+                                    .slider-nav.d-none.d-lg-flex
+                                            .slider-nav__inner.product__slider-nav
+    include components/_about-item
+    section.product.section.section_bg-blue.section_pb-160
+        .container
+                .row.d-flex.justify-content-between.mb-65
+                    .col-12.col-lg-8
+                        h2.section-title.section-title_color-light.mb-lg-2.mb-5 Наши услуги
+                        p Арендуйте физический сервер с запуском от 2 минут и бесплатной заменой комплектующих.Все его ресурсы — только ваши.
+                    .col-3.d-flex.justify-content-end.d-lg-flex.align-items-center.d-none
+                        a.section-link(href="#") Смотреть все
+                            +icon('the-arrow')
+                .row
+                    .col-12.slider.product__slider-services
+                        .product-list.slider-wrapper
+                                each item in listServicse
+                                        .product-item
+                                            .product-item__wrapper
+                                                h3.product-item__title.product-item__title_block-icon
+                                                    +icon('cloud')
+                                                    span #{item.title}
+                                                p.product-item__text  #{item.text} 
+                                                .product-item__btn-dom
+                                                    a.button.button_the-arrow(href="#") Подробнее 
+                                                        +icon('more-detailed')
+                        .slider-interface.slider-interface_center_decs
+                                    .slider-dots
+                                        .slider-dots__inner.product__dots-inner-services
+                                    .slider-nav.d-none.d-lg-flex
+                                            .slider-nav__inner.product__slider-nav-services
+    include components/_request

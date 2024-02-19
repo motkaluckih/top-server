@@ -1,0 +1,60 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Клиентам";
+    let currentPage = "clients";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Клиентам", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let listCardProduct = [
+            {"title": "Документы", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "DNS", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Конструктор и CMS", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Хостинг", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Серверы VPS", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Выделенные серверы и ДЦ", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "SSL-сертификаты", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Почта и сервисы", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Личный кабинет", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Финансовые вопросы", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Партнёрам", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+            {"title": "Правовые вопросы", "text": "Финансово-коммерческая деятельность проекта Topserver.ru осуществляется от имени АО"},
+        ]
+        let area = "index"
+
+block content
+    section.product.section.section_pb100
+            .container
+                    .row.product__row
+                        .col-12.p-0
+                            .row.product-list.product-list_gap-30
+                                each item in listCardProduct
+                                    .col-12.col-md-6.col-xl-4
+                                        .product-item
+                                            .product-item__wrapper
+                                                h3.product-item__title.product-item__title_block-big #{item.title}
+                                                p.product-item__text  #{item.text} 
+                                                .product-item__btn-dom
+                                                    a.button.button_the-arrow(href="#") Подробнее 
+                                                        +icon('more-detailed')
+                    .row.d-flex.flex-column 
+                        .col-12.product__pagination
+                                ul.pagination
+                                    li.control.disabled.item-none
+                                        button.button.button_the-arrow.pagination__btn.pagination__btn_prev
+                                            +icon('more-detailed')
+                                    li.active
+                                        a(href="#") 1
+                                    li
+                                        a(href="#") 2
+                                    li
+                                        a(href="#") 3
+                                    li.control.item-none
+                                        button.button.button_the-arrow.pagination__btn
+                                            +icon('more-detailed')
+                        .col-12.d-flex.justify-content-center.d-flex.d-lg-none.pt-2
+                            a.section-link.section-link_color-red(href="#") Смотреть все
+                                +icon('the-arrow')

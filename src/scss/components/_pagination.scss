@@ -1,0 +1,122 @@
+// .pagination ====================================================================================================
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-down(lg) {
+      border-radius: 5px;
+      overflow: hidden;
+  }
+
+  li {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 27px;
+    min-height: 34px;
+    border: 1px solid $color-gray-400;
+    border-radius: 10px;
+    @include fontCompressor(14px, 500, 1);
+    color: $color-gray-400;
+    text-decoration: none;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 0;
+        border-radius: 0;
+        border: none;
+        min-width: 54px;
+        min-height: 5px;
+        background-color: $color-gray-200;
+    }
+
+    transition: background-color $transition, color $transition;
+
+    &:hover {
+      color: $color-light;
+      background-color: $color-red;
+      border-color: transparent;
+
+      &.control {
+        border-color: transparent;
+
+        button {
+          .icon {
+            fill: $color-light;
+          }
+        }
+      }
+    }
+
+    &.item-none {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
+    & > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .icon {
+      width: 23px;
+      height: 28px;
+    }
+
+    &.active {
+      color: $color-light;
+      background-color: $color-red;
+      border-color: transparent;
+    }
+
+    &.control {
+      border-color: $color-red;
+    }
+
+    &.disabled {
+
+      button {
+        .icon {
+          fill: $color-black;
+        }
+      }
+
+      &.control {
+        border-color: $color-black;
+      }
+
+      &:hover {
+        color: inherit;
+        background-color: transparent;
+
+        button {
+          .icon {
+            fill: inherit;
+          }
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 16px;
+
+      @include media-breakpoint-down(lg) {
+        margin-right: initial;
+      }
+    }
+  }
+
+  &__btn{
+      &_prev {
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+  }
+
+}

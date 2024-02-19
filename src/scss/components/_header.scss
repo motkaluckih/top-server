@@ -1,0 +1,187 @@
+// .header ====================================================================================================
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	@include media-breakpoint-down(lg) {
+		position: relative;
+		flex-direction: column;
+	}
+
+
+	&_visible-lk {
+		.header-mobile,
+		.header-body,
+		.header-top {
+			display: none;
+		}
+	}
+
+}
+
+// .header-top ====================================================================================================
+.header-top {
+
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+	border-bottom: $border-gray-08;
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+	// .header-top__contact
+	&__contact {
+		gap: 30px;
+		
+		@include svg-converter($color-gray-400, 16px, 16px);
+		
+		&:not(:last-child) {
+			margin-right: 64px;
+
+			@include media-breakpoint-down(xl) {
+				margin-right: 40px;
+			}
+		}
+
+		&:nth-child(2) {
+			margin-left: auto;
+		}
+	}
+}
+
+// .header-mobile ====================================================================================================
+.header-mobile {
+	display: none;
+	@include media-breakpoint-down(lg) {
+		display: flex;
+	}
+	&__btn {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row-reverse;
+		gap: 5px;
+		width: 50%;
+		padding: 13px 23px;
+		color: $color-light;
+		@include fontCompressor(10px, 300, 1);
+		text-decoration: none;
+		background-color: $color-dark-red;
+
+		@include media-breakpoint-down(lg) {
+			display: flex;
+		}
+
+		&:last-child {
+			background-color: $color-red;
+		}
+
+		@include svg-converter($color-light, 16px, 16px);
+		
+	}
+}
+
+
+// .header-contact ====================================================================================================
+.header-contact {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 18px;
+
+	// .header-contact__content
+	&__content {
+		@include fontCompressor(10px, 400, 1);
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+// .header-body ====================================================================================================
+.header-body {
+	padding: 35px 0;
+	@include media-breakpoint-down(xl) {
+		border-bottom: none;
+	}
+
+	&__item {
+		padding: 39px 41px 43px;
+	}
+	&__wrapper {
+		padding-bottom: 20px;
+	}
+
+	&__right {
+		width: calc(666/1140*100%);
+	}
+
+	@include media-breakpoint-down(xl) {
+		position: relative;
+		padding: 17px 0;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 0;
+		&__container{
+			flex-direction: row-reverse;
+			padding: 29px 0;
+		}
+	}
+
+	&__container {
+		@include media-breakpoint-down(lg) {
+			border-bottom: $border-gray;
+		}
+	}
+
+	.logo__mob-page{
+		display: none;
+	}
+
+	&.bg-white {
+		@include media-breakpoint-down(lg) {
+		background-color: $color-light;
+			.logo__main {
+				display: none;
+			}
+			
+			.logo__mob-page {
+				display: flex;
+			}
+
+			.header-burger {
+				.icon {
+					fill: $color-black;
+				}
+				
+			}
+		}
+	}
+
+	.header-burger {
+		.icon {
+			width: 21px;
+			height: 15px;
+		}
+	}
+
+	&__btn-block {
+		display: flex;
+		gap: 16px;
+
+		a {
+			padding: 8px 25px 6px;
+
+			@include media-breakpoint-down(lg) {
+				display: none;
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,54 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "О компании";
+    let currentPage = "about";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "О компании", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let area = "index"
+    
+block content
+
+    section.about.section.section_bg-gray
+        .container 
+            .row
+                .col-12.col-lg-6.col-xl-5.pe-lg-0 
+                    img.about__img-decs(src="img/about.png", alt="Фото серверов")
+                .col-12.col-lg-5.col-xl-6.about__left.about__left_p-90-decs
+                    h2.about__title.section-title О компании
+                    img.about__img-mob(src="img/about.png", alt="Фото серверов")
+                    .about__block-text
+                        p Задача организации, в особенности же постоянный количественный рост и сфера нашей активности предоставляет широкие возможности для своевременного выполнения сверхзадачи.
+                        p Мы вынуждены отталкиваться от того, что начало повседневной работы по формированию позиции способствует подготовке и реализации новых предложений. 
+                    .about__btn-dom.about__btn-dom_mob-pt-30
+                        button.button.button_transparent-red Заказать сервер
+    include components/_advantage
+    section.about.section.section_bg-blue
+        .container 
+            .row.about__row
+                .col-12.col-lg-5
+                    img.about__img-decs.about__img-decs_w-100(src="img/servers.png", alt="Фото серверов")
+                .col-12.col-lg-7.about__left.about__left_p-150-decs
+                    h2.about__title.section-title.section-title_color-light Почему мы? 
+                    img.about__img-mob(src="img/servers.png", alt="Фото серверов")
+                    ul 
+                        li Аттестат ФЗ-152, ФСТЭК, ФСБ
+                            +icon('check-box')
+                        li Защита данных и резервное копирование
+                            +icon('check-box')
+                        li Бесплатный ИТ-аудит комплексного проекта
+                            +icon('check-box')
+                        li Опыт создания ИТ-инфраструктур - более 10 лет
+                            +icon('check-box')
+                        li Круглосуточный мониторинг серверов
+                            +icon('check-box')
+                        li Надежность и катастрофоустойчивость
+                            +icon('check-box')
+    include components/_data-center
+    include components/_request
+
+

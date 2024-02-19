@@ -1,0 +1,129 @@
+// .contacts-list ====================================================================================================
+.contacts-list {
+    ul {
+        display: flex;
+        padding: 0 12px;
+        gap: 30px;
+
+        @include media-breakpoint-down(lg) {
+           gap: 25px;
+        }
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 35px;
+        padding-bottom: 46px;
+        width: 48%;
+        border: $border-gray;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background-color $transition;
+
+        @include media-breakpoint-down(lg) {
+            padding: 18px;
+            padding-bottom: 30px;
+			width: 100%;
+		}
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            width: 52px;
+            height: 52px;
+            background-color: $color-blue;
+            border-radius: 5px;
+            transition: background-color $transition;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 16px;
+                width: 42px;
+                height: 42px;
+            }
+        }
+                .icon {
+                    fill: $color-light;
+                    width: 42px;
+                    height: 42px;
+                    transition: stroke $transition, fill $transition;
+                }
+        a {
+            text-decoration: none;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            transition: color $transition;
+            @include title-2;
+            color: $color-black;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 22px;
+                }
+        }
+
+        a {
+            @include fontCompressor(20px, 300, 1);
+            transition: color $transition;
+
+            @include media-breakpoint-down(lg) {
+                @include fontCompressor(13px, 400, 1);
+            }
+        }
+
+        &:hover {
+            
+                background-color: $color-blue;
+                border: none;
+            
+            h3 {
+                color: $color-light;
+            }
+
+            span {
+                background-color: $color-light;
+                .icon {
+                    fill: $color-blue;
+                }
+            }
+
+            p,
+            .section-title {
+                color: $color-light;
+            }
+
+        }
+    }
+}
+
+// .contacts-map ====================================================================================================
+.contacts-map {
+    &__top {
+        padding-bottom: 100px;
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 40px;
+        }
+    }
+
+    img {
+        width: 100%;
+        min-height: 488px;
+
+        @include media-breakpoint-down(md) {
+                min-height: 617px;
+                object-fit: cover;
+                object-position: center;
+        }
+
+    }
+
+    &__block {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+
+}

@@ -1,0 +1,66 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "my-services";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+
+    section.lk-settings
+        .lk-settings__btn-dom
+            h3.lk-settings__title.lk-settings__title_small 
+                span srv01
+                button
+                    +icon("pencil")
+            button.lk-settings__spread 
+                +icon("spread")
+        .lk-settings__slider.slider
+            ul.lk-settings__list.slider-wrapper   
+                li.lk-settings__item 
+                    a.lk-settings__btn.action Информация
+                li.lk-settings__item 
+                    a.lk-settings__btn IP-Адреса
+                li.lk-settings__item 
+                    a.lk-settings__btn DDoS-защита
+        
+        .card-lk
+            h3.card-lk__title.card-lk__title_small Общая информация о сервере  
+            .row.mb-20
+                .col-12.col-md-6.mb-mob
+                    .card-lk__block
+                        .row.card-lk__list.card-lk__list_gap-50
+                            .col-12.col-sm-6.col-xl-5.card-lk__item Статус
+                                    p.card-lk__text.card-lk__text_green-flag Активен
+                            .col-12.col-sm-4.col-xl-5.card-lk__item Стоимость
+                                    p.card-lk__text 16 000 ₽ / Месяц
+                            .col-12.col-sm-6.col-xl-5.card-lk__item Действует до
+                                    p.card-lk__text 10.05.2023
+                            .col-12.col-sm-4.col-xl-5.card-lk__item Имя пользователя
+                                    p.card-lk__text Administrator
+                            .col-12.col-sm-6.col-xl-5.card-lk__item 
+                                .card-lk__icon Пароль
+                                    +icon("eye")
+                                p.card-lk__text *************
+                
+                .col-12.col-md-6
+                    .card-lk__block
+                        .row.card-lk__list.card-lk__list_gap-50
+                            .col-12.col-sm-6.col-xl-3.card-lk__item IP-Адрес
+                                    p.card-lk__text 192.192.192.192
+                            .col-12.col-sm-4.col-xl-7.card-lk__item Тариф
+                                    p.card-lk__text.card-lk__text_decoration 2xE-5 2696v4 64RAM 500SSD
+                            .col-12.col-sm-6.col-xl-3.card-lk__item RAM
+                                    p.card-lk__text 64 GB
+                            .col-12.col-sm-4.col-xl-7.card-lk__item Хранилище
+                                    p.card-lk__text 512 GB
+                            .col-12.col-sm-6.col-xl-3.card-lk__item Процессор
+                                p.card-lk__text 44 Ядра
+                            .col-12.col-sm-6.col-xl-7.card-lk__item Система
+                                p.card-lk__text -    
+            .row 
+                .col-12 
+                    button.nav__btn.nav__btn_red-transparent(data-btn='to-extend') Продлить

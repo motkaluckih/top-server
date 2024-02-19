@@ -1,0 +1,46 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Помощь";
+    let currentPage = "help";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Помощь", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let listHelp = [ 
+        {"title": "Начало работы", "listQuestions": [{"link": "Как получить доступ к Панели управления"},{"link": "Как заказать нужный тариф"},{"link": "Как настроить мой заказ"},{"link": "Лучшая практика по работе с хостингом"},]},
+        {"title": "Панель управления TopServer", "listQuestions": [{"link": "Как войти в cPanel?"},{"link": "Как добавить сайт в cPanel?"},{"link": "Личный кабинет"},{"link": "Лучшая практика по работе с хостингом"},]},
+        {"title": "Размещение сайтов", "listQuestions": [{"link": "Загрузка файлов сайта на хостинг при помощи FTP"},{"link": "Загрузка файлов сайта на хостинг при помощи SFTP"},{"link": "SSH-доступ к хостинг-аккаунту"},{"link": "Лучшая практика по работе с хостингом"},]},
+        {"title": "Оплата услуг", "listQuestions": [{"link": "Какие способы оплаты возможны"},{"link": "Внутренний баланс на хостинге"},{"link": "Как активировать промокод"},{"link": "Как оплатить услугу"},]},
+        {"title": "Почта", "listQuestions": [{"link": "Подключение Яндекс.Почты для домена"},{"link": "Регистрация домена в Mail.Ru"},{"link": "Как настроить отправку почты с сайта"},{"link": "Настройка почтовых клиентов"},]},
+    ]
+    let area = "index"
+block content
+
+    section.section.section_pb100.help
+        .container
+            .help__form-searck.form-searck  
+                .form-searck__group
+                    input(type="text" placeholder="Введите вопрос и найдите решение")
+                    button(type="submit").form-searck__btn.button.button_secondary.button_red
+                        span Поиск
+                        +icon('search')
+                .help__list
+                    each item in listHelp
+                        .help__item
+                            .row.d-flex.justify-content-between.flex-column.flex-lg-row
+                                .col-12.col-lg-5
+                                        h3 #{item.title}
+                                .col-12.col-lg-7.col-xl-6
+                                    ul
+                                        each questions in item.listQuestions
+                                            li 
+                                                a.button.button_the-arrow(href="#") 
+                                                    +icon('more-detailed')
+                                                    span #{questions.link}
+                                    .col-12.d-flex.justify-content-start.ps-4.ps-lg-0
+                                        a.section-link.section-link_color-red(href="#") Показать все
+                                            +icon('the-arrow')
+    include components/_request

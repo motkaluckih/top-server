@@ -1,0 +1,145 @@
+// .services-slider ====================================================================================================
+.services-slider {
+    display: flex;
+    align-items: center;
+    padding: 38px 0 58px;
+    overflow: hidden;
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 0;
+    overflow: visible;
+  }
+  
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    transform: rotate(90deg);
+    overflow: visible;
+
+    @include media-breakpoint-down(lg) {
+      padding: 0;
+      transform: initial;
+      overflow: hidden;
+    }
+  }
+
+  .slider-dots {
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+}
+
+.services-slide {
+  position: relative;
+  padding: 34px 24px 20px;
+  height: 100%;
+  width: 100%;
+  color: $color-light;
+  transform: rotate(270deg);
+
+  @include media-breakpoint-down(lg) {
+    padding: 93px 12px 50px;
+    transform: initial;
+    overflow: hidden;
+  }
+
+  &__btn-dom {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    @include media-breakpoint-down(lg) {
+      justify-content: space-between;
+      width: calc(236/383*100%);
+      flex-direction: column;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: calc(236/307*100%);
+    }
+
+    a {
+      padding: 15px 30px;
+    }
+  }
+
+  .container,
+  .row,
+  [class*="col-"] {
+    height: 100%;
+    // padding: 0;
+  }
+
+  &__mob {
+    display: none;
+    
+    @include media-breakpoint-down(lg) {
+      display: flex;
+    }
+  }
+
+  &__decs {
+    display: flex;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__img {
+    max-width: 110px;
+    padding-top: 50px;
+    padding-left: 50px;
+    
+    @include media-breakpoint-down(lg) {
+      position: absolute;
+      top: 0;
+      right: calc(90/375*100%);
+      z-index: -1;
+    }
+
+    @include media-breakpoint-down(sm) {
+     top: -40px;
+    }
+  }
+
+  img {
+    margin-bottom: -63px;
+    @include media-breakpoint-down(md) {
+        max-width: 160px;
+        height: 100%;
+    }
+
+      @include media-breakpoint-down(sm) {
+        max-width: initial;
+        height: initial;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: $color-light;
+    padding-left: 0;
+  }
+
+  h2 {
+    @include title-1;
+    margin-bottom: 48px;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 25px;
+    }
+  }
+
+  p {
+    margin-bottom: 59px;
+    @include fontCompressor(16px, 300, 22px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 33px;
+      @include fontCompressor(14px, 300, 23px);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// * ====================================================================================================
+// * VENDORS
+// * ====================================================================================================
+
+// Normalize
+@import "vendors/normalize";
+
+// * ====================================================================================================
+// * GLOBAL
+// * ====================================================================================================
+// @import "./global/settings"; // Основные настроечные переменные
+@import "./global/custom-bootstrap"; // Кастомные настройки для Bootstrap
+@import "./global/helpers"; // Миксины и функции
+@import "./global/fonts"; // Шрифты
+@import "./global/variables"; // Переменные
+@import "./global/global"; // Глобальные стили
+
+// * ====================================================================================================
+// * SMALL COMPONENTS
+// * ====================================================================================================
+@import "./components/button";
+@import "./components/nav";
+@import "./components/slider";
+@import "./components/form";
+@import "./components/pagination";
+
+// * ====================================================================================================
+// * BIG COMPONENTS
+// * ====================================================================================================
+@import "./components/header";
+@import "./components/footer";
+@import "./components/sidebar";
+
+@import "./components/services";
+@import "./components/advantage";
+@import "./components/shop";
+@import "./components/about";
+@import "./components/product";
+@import "./components/request";
+@import "./components/contacts";
+@import "./components/stages";
+@import "./components/data-center";
+@import "./components/help";
+@import "./components/lk";
+@import "./components/card-lk";

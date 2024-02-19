@@ -1,0 +1,64 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "referral";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+
+    section.lk-settings
+        h3.lk-settings__title Реферальная система 
+        .card-lk
+            .row.card-lk_padding.mb-60
+                .col-12.col-xl-4.card-lk__block.card-lk__block_p-10
+                            .card-lk__item.card-lk__item_black.card-lk__item_gap-20 Баланс для вывода
+                                p.card-lk__text.card-lk__text_big-red 1900 
+                                    span ₽
+                                p.card-lk__text.card-lk__text_loaned-gray Мнимальная сумма вывода: 100 
+                                    span ₽
+                
+                .col-12.col-xl-8.p-0.ps-xl-4
+                    .card-lk__block.card-lk__block_p-25
+                        .row.card-lk__list
+                            .col-12.col-sm-5.col-lg-3.col-xl-5.card-lk__item.card-lk__item_middle-black Получаемый процент
+                                    p.card-lk__text.card-lk__text_middle-red 15%
+                            .col-12.col-sm-5.col-lg-5.col-xl-5.card-lk__item.card-lk__item_middle-black Регистраций
+                                    p.card-lk__text.card-lk__text_middle-red 0
+                            .col-12.col-sm-5.col-lg-3.col-xl-5.card-lk__item.card-lk__item_middle-black Повышение, 15% > 20%
+                                    p.card-lk__text.card-lk__text_middle-red Еще 1 000 
+                                        span ₽
+                            .col-12.col-sm-5.col-lg-5.col-xl-5.card-lk__item.card-lk__item_middle-black Всего заработано
+                                    p.card-lk__text.card-lk__text_middle-red 0 
+                                        span ₽
+            
+            h3.card-lk__title.card-lk__title_small Ваша реферальная ссылка
+            .card-lk__link-dom   
+                button.nav__btn.nav__btn_gray-circle-15 
+                    span hhtps://topserver.net/?ref=546010
+                    +icon("copy")
+                .card-lk__balans
+                    p После регистрации Ваш реферал получит бонус 
+                        span 15% 
+                    p к пополнению баланса, который будет действовать 
+                        span 24 часа.
+            .lk-settings__slider.slider
+                ul.lk-settings__list.lk-settings__list_mb20.slider-wrapper   
+                    li.lk-settings__item 
+                        a.lk-settings__btn.action(href="./referral.html") История действий
+                    li.lk-settings__item 
+                        a.lk-settings__btn(href='./top-referral.html') Топ рефералов
+
+            .row.lk-settings__block
+                .col-12.card-lk.card-lk_container 
+                    .table-responsive-lg.table-wrapper.table-responsive-lg
+                        table.table.table_border-none
+                            thead.table__thead_stretch-w
+                                tr
+                                    th(scope="col") Время
+                                    th(scope="col") Клиент
+                                    th(scope="col") Действие
+                                    th(scope="col") Заработок

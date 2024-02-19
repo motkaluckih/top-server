@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model package="citypr" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+    <object class="cityPrice" table="city_price" extends="xPDOSimpleObject">
+        <field key="city" dbtype="varchar" phptype="string" precision="255" null="true" default="NULL" />
+        <field key="price" dbtype="decimal" precision="18,2" phptype="float" null="false" default="0" />
+        <field key="description" dbtype="longtext" phptype="string" null="true" default="NULL" />
+    </object>
+</model>

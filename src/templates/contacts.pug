@@ -1,0 +1,50 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Контакты";
+    let currentPage = "contacts";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Контакты", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let area = "index"
+
+block content
+
+    section.section.section_pb100.contacts-list
+            .container
+                    .row
+                        .col-12
+                            ul.row
+                                li.col-12.col-lg-3
+                                    a(href="#")
+                                        span
+                                            +icon("contact-tg")
+                                        h3 Telegram 
+                                        p Задайте вопрос нам в Telegram
+                                li.col-12.col-lg-3
+                                    a(href="#")
+                                        span
+                                            +icon("contact-wat")
+                                        h3 WhatsApp 
+                                        p Задайте вопрос нам в WhatsApp
+                                li.col-12.col-lg-3
+                                    a(href="#")
+                                        span
+                                            +icon("contact-mail")
+                                        h3 Мы находимся по адресу 
+                                        p Санкт-Петербург, проспект Невского 51к3
+                                li.col-12.col-lg-3
+                                    a(href="88129543993")
+                                        span
+                                            +icon("contact-phone")
+                                        h3 Звоните нам
+                                        p 8 (812) 954-39-93
+    section.contacts-map
+            .conatainer
+                .row
+                    .col-12.col-lg-12.contacts-map__block
+                        img(src="img/location.jpg", alt="Расположение организации")
+    include components/_request

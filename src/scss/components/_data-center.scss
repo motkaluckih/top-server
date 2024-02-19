@@ -1,0 +1,117 @@
+.data-center {
+    color: $color-black;
+    h2 {
+        margin-bottom: 90px;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__city {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        @include fontCompressor(32px, 700, 1);
+        @include svg-converter($color-red, 26px, 26px);
+    
+        @include media-breakpoint-down(lg) {
+            // @include fontCompressor(20px, 700, 1);
+            font-size: 20px;
+            @include svg-converter($color-red, 24px, 24px);
+        }
+    }
+
+    address {
+        margin-bottom: 41px;
+        
+        p {
+            @include fontCompressor(20px, 300, 30px);
+            color: $color-gray-400;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 35px;
+                @include fontCompressor(16px, 300, 24px);
+            }
+        }
+    }
+
+    // p {
+    //     margin-bottom: 50px;
+    // }
+
+    img {
+        width: 100%;
+
+        @include media-breakpoint-down(xl) {
+            height: 100%;
+        }
+
+        @include media-breakpoint-down(lg) {
+            max-height: 506px;
+        }
+
+        @include media-breakpoint-down(md) {
+            min-height: 506px;
+            height: 100%;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 45px 0;
+        @include list-reset;
+        padding-top: 50px;
+
+        @include media-breakpoint-down(lg) {
+            gap: 60px 0;
+        }
+    }
+
+    li {
+        padding: 0;
+    }
+
+    &__left {
+       padding-top: 62px;
+       padding-right: 0;
+
+        @include media-breakpoint-down(lg) {
+            padding-top: 0;
+            padding-right: 12px;
+        }
+    }
+    &__big-text  {
+        @include fontCompressor(52px, 700, 1);
+        color: $color-red;
+
+        span {
+            font-size: 32px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 6px;
+        }
+    }
+
+    &__desc {
+        @include fontCompressor(16px, 300, 1);
+        color: $color-gray-400;
+    }
+
+    &__img-mob {
+        display: none;
+
+        @include media-breakpoint-down(lg) {
+            display: flex;
+            margin-bottom: 35px;
+        }
+    }
+
+    &__img-decs {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+}

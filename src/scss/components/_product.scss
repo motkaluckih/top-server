@@ -1,0 +1,238 @@
+.product {
+    &__row {
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__pagination {
+        display: none;
+        justify-content: center;
+
+        @include media-breakpoint-down(lg) {
+            display: flex;
+        }
+    }
+}
+// .product-list ====================================================================================================
+.product-list {
+    display: flex;
+    @include list-reset;
+    overflow: visible;
+
+    &_gap-30 {
+        gap: 30px 0;
+    }
+
+    &_gap-25 {
+        gap: 25px 0;
+    }
+
+    &_gap-15 {
+        gap: 13px 0;
+    }
+
+
+    @include media-breakpoint-down(lg) {
+        overflow: hidden;
+    }
+
+    &_d-lg-none {
+        display: none;
+    }
+}
+
+
+// .product-item  ====================================================================================================
+.product-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        min-height: 389px;
+        height: 100%;
+        border-radius: 10px;
+        color: $color-gray-400;
+        @include body-text;
+        background-color: $color-light;
+        box-shadow: $box-Shadow-gray;
+        
+        &_rectangle {
+            min-height: initial;
+        }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        width: 100%;
+        height: 100%;
+
+        @include media-breakpoint-down(xl) {
+            padding: 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include list-reset;
+        padding: 20px 0 35px;
+        gap: 30px;
+
+        &_pb-15 {
+            padding-bottom: 15px;
+        }
+
+        &_row {
+            flex-direction: row;
+            padding: 20px 0 0px;
+            gap: 30px 0;
+        }
+    }
+
+    &__element {
+        // li
+        display: flex;
+        align-items: center;
+        padding: 0;
+        gap: 10px;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: transparent;
+            stroke: $color-black;
+        }
+
+        &_center {
+            justify-content: center;
+
+            @include media-breakpoint-down(xl) {
+                order: 1;
+                justify-content: initial;
+            }
+        }
+
+        
+    }
+
+    &__right {
+        
+        &_small {
+            @include fontCompressor(12px, 300, 16px);
+        }
+    }
+
+    //product-item__title
+    &__title {
+        position: relative;
+        padding-bottom: 25px;
+        @include title-3;
+        color: $color-black;
+
+        span {
+            display: flex;
+            max-width: 205px;
+
+            @include media-breakpoint-down(xl) {
+                max-width: 170px;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 1px;
+            background-color: $color-gray-200;
+        }
+
+        &_black {
+            color: $color-black;
+        }
+
+        &_block-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-height: 104px;
+
+            .icon {
+                width: 47px;
+                height: 47px;
+                stroke: $color-red;
+                fill: transparent;
+            }
+        }
+
+        &_block-big {
+            font-size: 24px;
+            line-height: 33px;
+            min-height: 90px;
+        }
+    }
+
+    //product-item__text 
+    &__text {
+        padding-top: 20px;
+        @include text-styles-2;
+    }
+
+    &__name {
+        @include fontCompressor(16px, 400, 22px);
+
+        &_black {
+            color: $color-black;
+        }
+
+        &_red {
+            color: $color-red;
+        }
+
+        &_size-14 {
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    &__btn-dom {
+        display: flex;
+        justify-content: start;
+        padding-top: 25px;
+        margin-top: auto;
+
+        &_end {
+            display: flex;
+            justify-content: end;
+            padding-top: 0;
+            width: 100%;
+
+            @include media-breakpoint-down(xl) {
+                justify-content: initial;
+            }
+        }
+
+        &_pt-0 {
+            padding-top: 0;
+        }
+
+        &_mob{
+            padding-top: 0;
+
+            @include media-breakpoint-down(md) {
+                padding-top: 25px;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        font-size: 14px;
+    }
+}

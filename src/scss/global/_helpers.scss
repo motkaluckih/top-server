@@ -1,0 +1,225 @@
+@use "sass:math";
+
+// * ====================================================================================================
+// * FONT-FACE
+// * ====================================================================================================
+
+@mixin font-face($font-name, $font-src, $font-style, $font-weight) {
+  @font-face {
+    font-weight: $font-weight;
+    font-family: "#{$font-name}";
+    font-style: $font-style;
+    src: url("../fonts/#{$font-src}.woff2") format("woff2"),
+      url("../fonts/#{$font-src}.woff") format("woff");
+    font-display: swap;
+  }
+}
+
+// * ====================================================================================================
+// * MEDIA QUERIES
+// * ====================================================================================================
+
+@mixin media($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// * ====================================================================================================
+// * PIXELS TO DIFFERENT UNITS
+// * ====================================================================================================
+
+//Создает шрифты
+@mixin fontCompressor($size, $weight, $line) {
+  font-size: #{$size};
+  font-weight: #{$weight};
+  line-height: #{$line};
+}
+
+//Преобразуем svg sprite в цвет
+@mixin svg-converter($color, $width, $height) {
+    .icon {
+      fill: transparent;
+      stroke: #{$color};      
+    }
+
+    svg {
+      width: #{$width};
+      height: #{$height};
+    }
+}
+
+@mixin svg-fill-transparent($color, $width, $height){
+	fill: transparent;
+	stroke: #{$color};
+	width: #{$width};
+	height: #{$height};
+}
+
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+//Часто повторяющаяся кнопка на страницах
+@mixin btn-page($padding, $radius, $bg){
+  padding: #{$padding};
+  border-radius: #{$radius};
+  background-color: #{$bg};
+}
+
+
+@mixin range-formater($color){
+  input[type=range] {
+		width: 100%;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+		background: transparent;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		@-moz-document url-prefix() {
+			bottom: -10px;
+		}
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+		}
+
+		&:focus {
+			outline: none;
+		}
+		
+		&::-ms-track {
+			width: 100%;
+			cursor: pointer;
+			background: transparent;
+			border-color: transparent;
+			color: transparent;
+		}
+		
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			margin-top: -8px;
+			border: 3px solid $color;
+			height: 21px;
+			width: 21px;
+			background: $color-light;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		&::-moz-range-thumb {
+			border: 3px solid $color;
+			height: 14px;
+			width: 14px;
+			background: $color-light;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		&::-ms-thumb {
+			height: 21px;
+			width: 21px;
+			background: $color-light;
+			cursor: pointer;
+		}
+
+		&::-webkit-slider-runnable-track {
+			width: 100%;
+			height: 4px;
+			cursor: pointer;
+			background: $color;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+
+		&:focus::-webkit-slider-runnable-track {
+			background: $color;
+		}
+
+		&::-moz-range-track {
+			width: 100%;
+			height: 4px;
+			cursor: pointer;
+			background: $color;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+
+		&::-ms-track {
+			width: 100%;
+			height: 4px;
+			cursor: pointer;
+			background: $color;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+		&::-ms-fill-lower {
+			background: $color;
+			border-radius: 2.6px;
+		}
+		&:focus::-ms-fill-lower {
+			background: $color;
+		}
+		&::-ms-fill-upper {
+			background: $color;
+			border-radius: 2.6px;
+		}
+		&:focus::-ms-fill-upper {
+			background: $color;
+		}
+	}
+}
+
+@mixin before($direction, $value, $width, $height, $bg){
+	&::before {
+		content: "";
+		opacity: 0;
+		position: absolute;
+		#{$direction}: #{$value};
+		width: #{$width};
+		height: #{$height};
+		background-color: #{$bg};
+		transition: opacity $transition;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

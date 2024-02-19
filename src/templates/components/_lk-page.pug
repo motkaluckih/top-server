@@ -1,0 +1,23 @@
+.nav 
+    .container
+            .nav__wrapper
+                include ../components/_sidebar
+                .col-12.col-lg-9
+                    .row
+                        .col-12.p-0
+                            nav
+                                a.nav__burger(href='javascript:void(0)')
+                                    +icon("burger")
+                                ul.nav__bottom-list 
+                                    li 
+                                        button.nav__btn 1900 ₽
+                                    li 
+                                        a.nav__btn(href="mailto:topserver@gmail.com") topserver@gmail.com
+                                    li 
+                                        a.nav__btn.nav__btn_color-red.nav__btn_bg-gray(href="./") 
+                                            span Выйти
+                                            +icon('entrance')
+                    .row 
+                        .col-12.p-0 
+                            include ../components/_article
+                        

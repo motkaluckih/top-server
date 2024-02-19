@@ -1,0 +1,392 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	display: block;
+	left: 0;
+	overflow: auto;
+	width: 330px;
+	background-color: $color-blue;
+	box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+	transition: 0.5s;
+	overflow-x: hidden;
+	z-index: 9999;
+
+	// padding-left: 35px;
+
+	&_lk {
+		position: static;
+		width: calc(320/1440*100%);
+		min-height: 100%;
+		height: initial;
+		border-right: $border-gray;
+		background-color: transparent;
+		box-shadow: initial;
+		overflow: hidden;
+
+		@include media-breakpoint-down(lg) {
+			position: fixed;
+			padding-left: 20px;
+			padding-right: 20px;
+            width: 330px;
+			border-right: none;
+			background-color: $color-light;
+			box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+			overflow: initial;
+        }
+	}
+	
+	
+	&__img {
+		display: flex;
+		align-items: center;
+		width: 168px;
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+	}
+
+	&-wrap {
+		padding-bottom: 40px;
+		height: 100%;
+	}
+
+	&-top {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin: 0;
+		padding: 0;
+
+		&__close {
+			padding: 12px 20px;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+
+	#mobileNav {
+		width: 100%;
+		display: flex;
+		padding: 0;
+		margin: 0 0 0 0;
+
+		.menu {
+			width: 100%;
+			display: flex;
+			padding: 0 20px;
+			margin: 0 0 0 0;
+			list-style: none;
+			flex-direction: column;
+
+
+			&__item {
+				position: relative;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				border-bottom: none;
+				margin: 0 !important;
+				border-bottom: $border-gray;
+
+				a {
+					display: block;
+					width: 100%;
+					color: $color-light;
+					padding: 16px 0;
+					@include fontCompressor(14px, 600, 20px);
+					text-transform: uppercase;
+					transition: all .4s;
+					
+
+					&:hover {
+						color: $color-red;
+						transform: scale(1.1) translateX(15px);
+					}
+				}
+
+				.icon {
+					position: absolute;
+					right: 0;
+                    width: 18px;
+					height: 18px;
+                }
+
+				&:first-child {
+					border-top: $border-gray;
+				}
+			}
+
+			.active {
+				&::before{
+					display: none;
+				}
+				a {
+					color: $color-red;
+				}
+				
+			}
+		}
+	}
+
+	&-cont {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 30px;
+
+		@include media-breakpoint-down(md) {
+			align-items: center;
+		}
+
+		&__phone {
+			display: inline-flex;
+
+			a {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				color: $color-light;
+				font-size: 18px;
+				font-family: $font-primary;
+				font-weight: 600;
+
+				.icon {
+					margin-right: 5px;
+					display: inline-flex;
+				}
+
+				span {
+					display: inline-flex;
+				}
+			}
+		}
+	}
+}
+
+//.sidebar-lk=====================================================================================================
+.sidebar-lk {
+	&__left{
+		position: relative;
+	}
+
+	&__logo {
+		display: flex;
+		padding: 37px 0;
+		margin-bottom: 25px;
+    	border-bottom: $border-gray;
+	}
+
+	h2 {
+        margin-bottom: 30px;
+        @include fontCompressor(14px, 400, 19px);
+        color: $color-red;
+
+        span {
+            color: $color-gray-400;
+        }
+    }
+
+	ul {
+		display: flex;
+
+		@include media-breakpoint-down(lg) {
+			padding-right: 0;
+		}
+	}
+
+  	&__help-block {
+		position: absolute;
+		bottom: 0;
+
+		p {
+			color: $color-gray-400;
+		}
+
+		@include media-breakpoint-down(lg) {
+			color: $color-light;
+		}
+	}
+
+	&__help {
+		@include fontCompressor(16px, 300, 1);
+		text-decoration: none;
+		@include svg-converter($color-red, 14px, 14px);
+
+		@include media-breakpoint-down(lg) {
+			@include svg-converter($color-light, 14px, 14px);
+		}
+	}
+
+  	&__group {
+		&:not(:last-child){
+            margin-bottom: 50px;
+        }
+	}
+
+  // sidebar-lk__list ==============================================================================
+	&__list {
+		flex-direction: column;
+		@include list-reset;
+		gap: 20px;
+
+        li {
+            &.active {
+				.sidebar-lk__btn_arrow  {
+					color: $color-red;
+					
+					.icon {
+						fill: $color-red;
+						transform: rotate(180deg)
+					}
+				}
+            }
+        }
+
+        &_dropDown {
+			gap: 17px;
+    
+            li {
+                &:first-child {
+                    padding-top: 16px;
+                }
+            }
+        }
+  }
+
+  //Кнопки для основной навигации 
+  &__btn {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	@include fontCompressor(16px, 300, 1);
+	text-decoration: none;
+	transition: color $transition;
+	  
+  	@include before(right, 0, 1px, 100%, $color-red);
+
+	.icon {
+		transition: stroke $transition;
+	}
+
+	&.active,
+	&:hover,
+	&:active {
+		color: $color-red-dark;
+
+		&::before{
+			opacity: 1;
+		}
+	
+		.icon {
+			fill: $color-red-dark;
+		}
+	}
+  
+	&:focus-visible {
+		color: $color-red-default;
+
+		&::before{
+			opacity: 1;
+		}
+	
+		.icon {
+				fill: $color-red-dark;
+		}
+	}
+  
+  //стили для icon слевой стороны от текста
+	&_red-icon {
+		@include fontCompressor(14px, 300, 1);
+		gap: 10px;
+
+		.icon {
+			width: 20px;
+			height: 20px;
+			stroke: $color-red;
+			fill: transparent;
+			transition: stroke $transition;
+		}
+
+		@include media-breakpoint-down(lg) {
+			@include svg-converter($color-light, 20px, 20px);
+		}
+
+		span {
+			max-width: 221px;
+			text-align: left;
+		}
+			
+			&:hover,
+			&:active,
+			&:focus-visible {
+				color: $color-red;
+				
+				.icon {
+				fill: transparent;
+				stroke: $color-red-dark;
+				}
+			} 
+		}
+	}
+
+}
+
+	.sidebar-close {
+		left: -330px;
+		@include media-breakpoint-down(md) {
+			left: -100%;
+		}
+	}
+
+	.burger-close {
+		display: block;
+		padding: 4px 12px;
+		background-color: $color-light;
+		color: $color-red;
+		width: 42px;
+		height: 26px;
+		border-radius: 50px;
+
+		&_position {
+			display: none;
+			position: absolute;
+			top: 28px;
+			right: 0;
+
+			@include media-breakpoint-down(lg) {
+				display: flex;
+			}
+		}
+
+		svg {
+			fill: transparent;
+			stroke: $color-black;
+		}
+
+		.icon {
+			width: 18px;
+			height: 18px;
+			transition: transform .4s;
+		}
+
+		&:hover {
+			.icon {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+.sb-menu {
+	display: flex;
+	width: 100%;
+}
+
+.noscroll {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+}

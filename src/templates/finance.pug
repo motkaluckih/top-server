@@ -1,0 +1,32 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "finance";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+
+    section.lk-settings
+        h3.lk-settings__title Финансы
+        .lk-settings__slider.slider
+            ul.lk-settings__list.slider-wrapper   
+                li.lk-settings__item 
+                    a.lk-settings__btn.action(href="./finance.html") Баланс
+                li.lk-settings__item 
+                    a.lk-settings__btn(href="./history-of-operations.html") История операций 
+        .lk-settings__block
+            .card-lk.card-lk_containe
+                .row.mb-20
+                    .col-10.col-md-6
+                        .card-lk__block
+                            .row.card-lk__list
+                                .col-12.col-lg-6.col-xl-5.card-lk__item.card-lk__item_middle-black Баланс
+                                        p.card-lk__text.card-lk__text_big-red 1900 ₽
+                .row 
+                    .col-12 
+                        button.nav__btn.nav__btn_red-transparent Пополнить баланс
+            

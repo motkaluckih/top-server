@@ -1,0 +1,51 @@
+-
+    var menuList = [
+        {"title": "Главная", "url": "./index.html", "pageName": "index"},
+        {"title": "Серверы", "url": "./servers.html", "pageName": "servers"},
+        {"title": "Услуги", "url": "./services.html", "pageName": "services"},
+        {"title": "Контакты", "url": "./contacts.html", "pageName": "contacts"},
+    ]
+
+    var menuTop = [
+        {"title": "О компании", "url": "./about.html", "pageName": "about"},
+        {"title": "Клиентам", "url": "./clients.html", "pageName": "clients"},
+        {"title": "Помощь", "url": "./help.html", "pageName": "help"},
+    ]
+
+header.header(class=(headerLk))
+    .header-mobile
+        a.header-mobile__btn Регистрация
+            +icon("add-user")
+        a.header-mobile__btn.header-mobile__btn-color Вход
+            +icon("user")        
+    .header-top
+        .container.d-flex.align-items-center
+            .header-contact.header-top__contact
+                ul.menu  
+                    each link in menuTop
+                            li.menu__item-top(class=(link.pageName === currentPage ? "active" : undefined))
+                                a(href=link.url) #{link.title}   
+            .header-contact.header-top__contact.d-flex.flex-row
+                .header-contact__content.d-flex.flex-row.align-items-center
+                    +icon("accept-email")
+                    a.ms-1(href="mailto:topserver@gmail.com") topserver@gmail.com
+                .header-contact__content.d-flex.flex-row.align-items-center
+                    +icon("telegram")
+                    a.ms-1(href="mailto:topserver") topserver
+    .header-body(class=(headerColor))
+        .container
+            .header-body__container.d-flex.justify-content-between.align-items-center
+                a.hmb#hmbOpen.header-burger.header__burger.d-flex.d-xl-none(href='javascript:void(0)')
+                    +icon("burger")
+                a.header-body__logo.logo.pt(href="./")    
+                    img.logo__main(src="img/logo.svg", alt="логотип TOP SERVER")
+                    img.logo__mob-page(src="img/logo-page.svg", alt="логотип TOP SERVER")
+                .header-body__right.d-none.d-xl-flex.justify-content-between                
+                    nav.header-body__nav.d-none.d-xl-flex
+                        ul.menu 
+                            each link in menuList
+                                li.menu__item(class=(link.pageName === currentPage ? "active" : undefined))
+                                    a(href=link.url) #{link.title} 
+                    .header-body__btn-block             
+                        a.button.button_transparent(href="#") Регистрация
+                        a.button.button_red(href="settings.html") Войти

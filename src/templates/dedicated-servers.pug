@@ -1,0 +1,147 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "dedicated-servers";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+    var listCard = [
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек", "payment" : "25 450 ₽", "installation" : "1 250 ₽"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек", "payment" : "25 450 ₽", "installation" : "1 250 ₽"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек", "payment" : "25 450 ₽", "installation" : "1 250 ₽"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек", "payment" : "25 450 ₽", "installation" : "1 250 ₽"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек", "payment" : "25 450 ₽", "installation" : "1 250 ₽"},
+    ]
+
+    var listSystem = [
+        {"system":"Ubuntu", "url": "img/the-system/Ubuntu.png", "versionList": ["22.04", "23.04", "24.04"]},
+        {"system":"Debian", "url": "img/the-system/Debian.png", "versionList": ["11", "12", "13"]},
+        {"system":"CentOS", "url": "img/the-system/CentOS.png", "versionList": ["9 stream", "10 stream", "11 stream"]},
+        {"system":"Alma", "url": "img/the-system/Alma.png", "versionList": ["Linux 9", "Linux 9", "Linux 9"]},
+        {"system":"Rocky", "url": "img/the-system/Rocky.png", "versionList": ["Linux 9", "Linux 9", "Linux 9"]},
+        {"system":"Astra", "url": "img/the-system/Astra.png", "versionList": ["Linux CE", "Linux CE", "Linux CE"]},
+        {"system":"FreeBSD", "url": "img/the-system/FreeBSD.png", "versionList": ["12", "12", "12"]},
+        {"system":"Windows Server", "url": "img/the-system/WindowsServer.png", "versionList": ["2012", "2012", "2012"]},
+        {"system":"Windows", "url": "img/the-system/Windows.png", "versionList": ["11", "11", "11"]}
+    ]
+
+block content
+
+    section.lk-settings.action 
+        h3.lk-settings__title.mb-65 Ваш новый выделенный сервер          
+        .row.card-lk 
+            .col-12
+                .card-lk__name.mb-65 
+                    h4 Название
+                    button.nav__btn.nav__btn_circle-10 123topserver010
+
+            .col-8.col-sm-6.mb-65
+                .form-btn.form-btn_position-img
+                    img(src="img/rus.png", alt="Флаг России")
+                    label.form-label
+                        select.form-select.form-select_center 
+                            option(value='1') Выбор локации
+                            option(value='2') Русский
+                            option(value='3') Английский  
+                    
+            .col-12.p-0.mb-65 
+                .row.product-list.product-list_gap-30
+                    each item in listCard
+                        .col-12
+                            .product-item.product-item_rectangle
+                                    .product-item__wrapper
+                                        h3.product-item__title #{item.title}
+                                        ul.row.product-item__list.product-item__list_row 
+                                            li.col-12.col-md-6.col-xl-4.product-item__element 
+                                                +icon('cpu')
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_black.product-item__name_size-14 Процессор
+                                                    span #{item.processor}
+                                            li.col-12.col-md-6.col-xl-3.product-item__element 
+                                                +icon('inbox')
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_black.product-item__name_size-14 Память
+                                                    span #{item.memory}
+                                            li.col-12.col-md-6.col-xl-3.product-item__element.product-item__element_center 
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_red.product-item__name_size-14 #{item.payment} 
+                                                    span в месяц за сервер
+                                            li.col-12.col-md-6.col-xl-4.product-item__element 
+                                                +icon('speed-one')
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_black.product-item__name_size-14 Диски
+                                                    span #{item.disks}
+                                            li.col-12.col-md-6.col-xl-3.product-item__element 
+                                                +icon('sphere')
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_black.product-item__name_size-14 Приватная сеть 
+                                                    span #{item.network}
+                                            li.col-12.col-md-6.col-xl-3.product-item__element.product-item__element_center 
+                                                .product-item__right.product-item__right_small
+                                                    p.product-item__name.product-item__name_red.product-item__name_size-14 #{item.installation} 
+                                                    span установка сервера
+                                            li.col-12.col-md-6.col-xl-2.product-item__element.product-item__element_center 
+                                                .product-item__btn-dom.product-item__btn-dom_end
+                                                    button.button.button_main.button_transparent-red Заказать
+        .row 
+            .col-12 
+                h3.card-lk__title.card-lk__title_small Общая информация о сервере 
+                .lk-settings__slider.slider
+                    ul.lk-settings__list.slider-wrapper   
+                        li.lk-settings__item 
+                            a.lk-settings__btn.action Операционная система
+                        li.lk-settings__item 
+                            a.lk-settings__btn Предустановленное ПО
+                .lk-system.lk-system_pb-65
+                    .row.lk-system__list.mb-65 
+                            each item in listSystem
+                                .col-12.col-sm-6.col-md-4.lk-system__block
+                                    .lk-system__wrapper
+                                        .lk-system__top
+                                            img(src=item.url, alt="логотип TOP SERVER")
+                                            p #{item.system}
+                                        .form-btn.form-btn_gray-center
+                                            label.form-label
+                                                select.form-select.form-select_transparent-center
+                                                    each version in item.versionList
+                                                        option(value='1') #{version}
+                    .row 
+                        .col-12.col-md-5 
+                            label.form-label
+                            select.form-select.form-select_w-container
+                                option(value='1') Выбор периода оплаты и оформления заказа
+                                option(value='1') 01.01.2023 по 01.02.2023
+                                option(value='1') 01.06.2023 по 01.12.2023
+        .row.lk-results 
+            .col-12.col-sm-8 
+                h3 Итого
+                .lk-results__left 
+                    h4.lk-results__name CL21R-SSD
+                    .lk-results__btn-dom 
+                        button
+                            span -
+                        span.lk-results__quantity 1
+                        button
+                            span +    
+                .lk-results__server 
+                    ul 
+                        li Установочный платеж: 1 250 ₽
+                        li  
+                            +icon('choice')
+                            span DDoS защита
+                        li  
+                            +icon('choice')
+                            span Помощь в установке
+            .col-12.col-sm-4.lk-results__right
+                    .lk-results__container
+                        p.lk-results__payment 25 450 ₽
+                        .colp
+                            button.button.lk-results__btn.button_transparent-red Оплатить
+                            .form
+                                .form__checkbox.checkbox
+                                    input#one.custom-checkbox(type='checkbox' name='pers')
+                                    label(for='one')
+                                        span Автопродление

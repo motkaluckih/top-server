@@ -1,0 +1,68 @@
+// .request ====================================================================================================
+.request {
+  color: $color-light;
+
+  @include media-breakpoint-down(lg) {
+    padding: 69px 0;
+  }
+
+  h2 {
+    margin-bottom: 27px;
+    max-width: 348px;
+
+    @include media-breakpoint-down(lg) {
+      max-width: 300px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .img {
+    padding-bottom: 16px;
+
+    @include media-breakpoint-down(lg) {
+      padding-bottom: 25px;
+    }
+  }
+
+  &__link-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 100px;
+    background-color: $color-light;
+    cursor: pointer;
+
+    span {
+      margin: 0 auto;
+    }
+  }
+
+  a {
+    @include fontCompressor(36px, 500, 1);
+    color: $color-red;
+    text-decoration: none;
+
+
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+    }
+
+
+    @include svg-converter($color-light, 70px, 70px);
+    
+    .icon  {
+      padding-left: 2px;
+      fill: #30A8E4;
+    }
+    
+  }
+  
+}

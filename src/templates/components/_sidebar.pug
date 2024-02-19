@@ -1,0 +1,94 @@
+-
+    var menuList = [
+        {"title": "Главная", "url": "./index.html", "pageName": "index"},
+        {"title": "Серверы", "url": "./servers.html", "pageName": "servers"},
+        {"title": "Услуги", "url": "./services.html", "pageName": "services"},
+        {"title": "Контакты", "url": "./contacts.html", "pageName": "contacts"},
+    ]
+
+    var menuLinkServices = [
+        {"title": "Выделенные сервера", "url": "./dedicated-servers.html", "pageName": "dedicated-servers"},
+        {"title": "Виртуальные сервера", "url": "./", "pageName": "servers-lk"},
+        {"title": "ip адреса", "url": "./", "pageName": "servers-lk"},
+        {"title": "Услуги", "url": "./", "pageName": "servers-lk"},
+    ]
+
+    var additionallyList = [
+        {"title": "Мои услуги", "url": "./my-services.html", "pageName": "my-services"},
+        {"title": "Финансы", "url": "./finance.html", "pageName": "finance"},
+        {"title": "Реферальная система", "url": "./referral.html", "pageName": "referral"},
+        {"title": "Настройки", "url": "./settings.html", "pageName": "settings"},
+    ]
+    
+
+.sidebar(class=(sidebar)).sidebar-close#sidebar 
+    .container-fluid
+        if area !== "lk"
+            .row.sidebar-wrap
+                .col-12.d-flex.p-0 
+                    a.header-mobile__btn Регистрация
+                        +icon("add-user")
+                    a.header-mobile__btn.header-mobile__btn-color Вход
+                        +icon("user")
+                .col-12.sidebar-top__close.d-flex.justify-content-between
+                    a(href="#")
+                        img.sidebar__img.logo-sidebar(src="img/logo.svg", alt="PANEX")
+                    a#closeSidebar.burger-close(href="javascript:void(0);")
+                        +icon('close')
+            .row 
+                #mobileNav
+                        ul.menu 
+                                each link in menuList
+                                    li.menu__item(class=(link.pageName === currentPage ? "active" : undefined))
+                                        a(href=link.url) #{link.title} 
+                                            +icon('menu-arrow')
+        else
+            .row.sidebar-lk
+                .col-12.p-0
+                    .sidebar-lk__left
+                        a.sidebar-lk__logo(href="./")    
+                            img.sidebar__img(src="img/logo-page.svg", alt="логотип TOP SERVER")
+                        a#closeSidebar.burger-close.burger-close_position(href="javascript:void(0);")
+                            +icon('close')
+                    .sidebar-lk__group 
+                        h2 +
+                            span Заказать
+
+                        ul.sidebar-lk__list 
+                            each linkItem in menuLinkServices
+                                        if linkItem.title !== "Услуги"
+                                            li
+                                                a.sidebar-lk__btn(href=linkItem.url)(class=(linkItem.pageName === currentPage ? "active" : undefined)) #{linkItem.title} 
+                                        else
+                                            li(data-accordion='FAQ') 
+                                                button.sidebar-lk__btn.sidebar-lk__btn_arrow(data-accordion-top) #{linkItem.title} 
+                                                    +icon("list-arrow")
+
+                                                ul.sidebar-lk__list.sidebar-lk__list_dropDown(data-accordion-body)
+                                                    li  
+                                                        button.sidebar-lk__btn.sidebar-lk__btn_red-icon
+                                                            +icon('cloud')
+                                                            span Миграция в облако
+                                                    li 
+                                                        button.sidebar-lk__btn.sidebar-lk__btn_red-icon
+                                                            +icon('cloud')
+                                                            span Миграция инфраструктуры
+                                                    li 
+                                                        button.sidebar-lk__btn.sidebar-lk__btn_red-icon
+                                                            +icon('cloud')
+                                                            span Миграция инфраструктуры в дата-центр
+
+                    .sidebar-lk__group 
+                        h2 
+                            span Мой профиль
+
+                        ul.sidebar-lk__list.sidebar-lk__list_bottom 
+                            each linkItem in additionallyList
+                                    li  
+                                        a.sidebar-lk__btn(href=linkItem.url)(class=(linkItem.pageName === currentPage ? "active" : undefined)) #{linkItem.title} 
+                        
+                        .sidebar-lk__help-block
+                            a.sidebar-lk__help(href="help.html")
+                                +icon('search')
+                                span Поддержка
+                            p Бесплатная консультация

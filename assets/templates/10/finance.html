@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="css/bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="page">
+  <div class="page__wrapper page__wrapper_border nav">
+    <div class="container">
+      <div class="nav__wrapper">
+        <div class="sidebar sidebar_lk sidebar-close" id="sidebar">
+          <div class="container-fluid">
+            <div class="row sidebar-lk">
+              <div class="col-12 p-0">
+                <div class="sidebar-lk__left">
+                  <a class="sidebar-lk__logo" href="./">
+                    <img class="sidebar__img" src="/assets/templates/10/img/logo-page.svg" alt="логотип TOP SERVER">
+                  </a>
+                  <a class="burger-close burger-close_position" id="closeSidebar" href="javascript:void(0);">
+                    <svg class="icon">
+                      <use xlink:href="/assets/templates/10/img/sprite.svg#close"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="sidebar-lk__group">
+                  <h2>+<span>Заказать</span>
+                  </h2>
+                  <ul class="sidebar-lk__list">
+                    <li>
+                      <a class="sidebar-lk__btn" href="./dedicated-servers.html">Выделенные сервера </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./">Виртуальные сервера </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./">ip адреса </a>
+                    </li>
+                    <li data-accordion="FAQ">
+                      <button class="sidebar-lk__btn sidebar-lk__btn_arrow" data-accordion-top>Услуги <svg class="icon">
+                          <use xlink:href="/assets/templates/10/img/sprite.svg#list-arrow"></use>
+                        </svg>
+                      </button>
+                      <ul class="sidebar-lk__list sidebar-lk__list_dropDown" data-accordion-body>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция в облако</span>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция инфраструктуры</span>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция инфраструктуры в дата-центр</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sidebar-lk__group">
+                  <h2>
+                    <span>Мой профиль</span>
+                  </h2>
+                  <ul class="sidebar-lk__list sidebar-lk__list_bottom">
+                    <li>
+                      <a class="sidebar-lk__btn" href="./my-services.html">Мои услуги </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn active" href="./finance.html">Финансы </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./referral.html">Реферальная система </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./settings.html">Настройки </a>
+                    </li>
+                  </ul>
+                  <div class="sidebar-lk__help-block">
+                    <a class="sidebar-lk__help" href="help.html">
+                      <svg class="icon">
+                        <use xlink:href="/assets/templates/10/img/sprite.svg#search"></use>
+                      </svg>
+                      <span>Поддержка</span>
+                    </a>
+                    <p>Бесплатная консультация</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="row">
+            <div class="col-12 p-0">
+              <nav>
+                <a class="nav__burger" href="javascript:void(0)">
+                  <svg class="icon">
+                    <use xlink:href="/assets/templates/10/img/sprite.svg#burger"></use>
+                  </svg>
+                </a>
+                <ul class="nav__bottom-list">
+                  <li>
+                    <button class="nav__btn">1900 ₽</button>
+                  </li>
+                  <li>
+                    <a class="nav__btn" href="mailto:topserver@gmail.com">topserver@gmail.com</a>
+                  </li>
+                  <li>
+                    <a class="nav__btn nav__btn_color-red nav__btn_bg-gray" href="./">
+                      <span>Выйти</span>
+                      <svg class="icon">
+                        <use xlink:href="/assets/templates/10/img/sprite.svg#entrance"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 p-0">
+              <section class="lk-settings">
+                <h3 class="lk-settings__title">Финансы</h3>
+                <div class="lk-settings__slider slider">
+                  <ul class="lk-settings__list slider-wrapper">
+                    <li class="lk-settings__item">
+                      <a class="lk-settings__btn action" href="./finance.html">Баланс</a>
+                    </li>
+                    <li class="lk-settings__item">
+                      <a class="lk-settings__btn" href="./history-of-operations.html">История операций </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="lk-settings__block">
+                  <div class="card-lk card-lk_containe">
+                    <div class="row mb-20">
+                      <div class="col-10 col-md-6">
+                        <div class="card-lk__block">
+                          <div class="row card-lk__list">
+                            <div class="col-12 col-lg-6 col-xl-5 card-lk__item card-lk__item_middle-black">Баланс<p class="card-lk__text card-lk__text_big-red">1900 ₽</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <button class="nav__btn nav__btn_red-transparent">Пополнить баланс</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

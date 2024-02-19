@@ -1,0 +1,14 @@
+[data-accordion-top] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-accordion-body] {
+  --speed: 0.3s;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height var(--speed);
+  transition: max-height var(--speed);
+  will-change: max-height;
+}
+/*# sourceMappingURL=style.css.map */

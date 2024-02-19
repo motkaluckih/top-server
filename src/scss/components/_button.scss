@@ -1,0 +1,147 @@
+// .button ====================================================================================================
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 42px;
+	border-radius: 0;
+	cursor: pointer;
+	color: $color-light;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	transition: background-color $transition;
+	@include fontCompressor(12px, 500, 1);
+
+	&:disabled {
+		opacity: 0.45;
+	}
+
+	//маленькие кнопки
+	&_main {
+		padding: 8px 25px 6px;
+	}
+
+	&_selection {
+		border: none;
+		border-radius: initial;
+		padding: 14px 53px;
+		@include fontCompressor(16px, 400, 22px);
+		max-width: 174px;
+		color: $color-gray-400;
+
+		&.activ {
+			background-color: $color-red;
+			color: $color-light;
+		}
+	}
+
+	&_the-arrow{
+		padding: 0;
+		color: $color-red;
+		@include fontCompressor(14px, 300, 1);
+		transition: color $transition;
+
+			.icon {
+				fill: $color-red;
+				width: 24px;
+				height: 24px;
+				transition: fill $transition;
+			}
+
+			&:hover,
+			&:active {
+				color: $color-second-dark;
+				
+				.icon{
+					fill: $color-second-dark;
+				}
+			}
+
+			&:focus-visible {
+				color: $color-second-default;
+
+				.icon{
+					fill:  $color-second-default;
+				}
+			}
+	}
+
+	//без цвета
+	&_transparent {
+		background-color: transparent;
+		border-color: $color-light;
+
+		&:hover,
+		&:active {
+			background-color: $color-green-dark;
+		}
+
+		&:focus-visible {
+			background-color: $color-green-default;
+
+			&::before {
+				border-color: $color-green-light;
+			}
+		}
+	}
+
+	//красные
+	&_red {
+		background-color: $color-red-default;
+	}
+
+	//отдельные стили для без фога с крастным бордюром
+	&_transparent-red {
+		background-color: transparent;
+		border-color: $color-red;
+		color: $color-red;
+
+		&:hover,
+		&:active {
+			color: $color-light;
+		}
+
+		&:focus-visible {
+			color: $color-light;
+		}
+	}
+
+
+	&_transparent-red,
+	&_red {
+		&:hover,
+		&:active {
+			background-color: $color-red-dark;
+		}
+
+		&:focus-visible {
+			background-color: $color-red-default;
+
+			&::before {
+				border-color: $color-red-light;
+			}
+		}
+	}
+	
+	//Для позиционирования
+	&_pos-right {
+		position: absolute;
+		right: 25px;
+		bottom: 30px;
+		padding: 8px 25px 6px;
+		width: min-content;
+
+		@include media-breakpoint-down(xl) {
+            bottom: 20px;
+        }
+
+		@include media-breakpoint-down(md) {
+			position: static;
+		}
+	}
+
+}
+
+

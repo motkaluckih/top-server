@@ -1,0 +1,34 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "my-services";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+    section.lk-settings
+        h3.lk-settings__title Мои услуги
+
+        .table-responsive-lg.table-wrapper
+                table.table
+                    thead.table__thead.table__thead_gray
+                        tr
+                            th(scope="col") Имя
+                            th(scope="col") Конфигурация
+                            th(scope="col") Ip
+                            th.text-center(scope="col") Цена
+                            th(scope="col") Действует до
+                            th(scope="col") Состояние
+                    tbody
+                            tr
+                                td srv01
+                                td
+                                    a(href="services-more-detail.html").text-dec 2xE-5 2696v4 64RAM 500SSD
+                                td 192.192.192.192
+                                td 16 000 ₽ / Месяц
+                                td 10.05.2023
+                                td 
+                                    span.green Активен

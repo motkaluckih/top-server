@@ -1,0 +1,46 @@
+<b>Новая заявка с сайта {$_modx->config.site_url}</b>
+
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <b>Имя:</b>
+        </td>
+        <td>
+            {$name}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Телефон:</b>
+        </td>
+        <td>
+            {$phone}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Город/НП:</b>
+        </td>
+        <td>
+            {$city}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Улица:</b>
+        </td>
+        <td>
+            {$street}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Номер дома:</b>
+        </td>
+        <td>
+            {$house}
+        </td>
+    </tr>
+    </tbody>
+</table>

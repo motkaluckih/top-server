@@ -1,0 +1,9 @@
+section.section.section_p-vertical.pages
+        .container
+            .row
+                    .col-12.d-flex.flex-column.align-items-start
+                            ul
+                                each link in listPage
+                                        li(class=(link.pageColor === "color" ? "active" : undefined))
+                                            a #{link.title} 
+                            h1.section-title #{pageTitle}

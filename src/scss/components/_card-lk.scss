@@ -1,0 +1,222 @@
+// .card-lk ====================================================================================================
+.card-lk {
+	
+	&_padding {
+		padding: 0 12px;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		@include fontCompressor(20px, 500, 28px);
+
+		&_small {
+			margin-bottom: 40px;
+			@include fontCompressor(18px, 500, 1);
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+		@include list-reset;
+		gap: 35px 20px;
+
+		@include media-breakpoint-down(lg) {
+			gap: 20px;
+		}
+
+		&_gap-15 {
+			gap: 15px 20px;
+		}
+
+		&_gap-50 {
+			gap: 50px 20px;
+
+			@include media-breakpoint-down(xl) {
+				gap: 20px 10px;
+			}
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		color: $color-gray-400;
+
+		@include svg-converter($color-black, 20px, 20px);
+	}
+	
+	&__item {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		min-width: fit-content;
+		gap: 2px;
+		@include fontCompressor(16px, 300, 1);
+		color: $color-gray-400;
+
+		@include media-breakpoint-down(md) {
+			font-size: 12px;
+		}
+
+			&_black {
+				color: $color-black;
+			}
+
+			&_middle-black {
+				font-size: 18px;
+				color: $color-black;
+			}
+
+			&_gap-20 {
+				gap: 20px;
+
+				@include media-breakpoint-down(lg) {
+					gap: 10px;
+				}
+			}
+	}
+		
+	&__text {
+		position: relative;
+		display: flex;
+		width: max-content;
+		color: $color-black;
+
+		&_decoration {
+			text-decoration: underline;
+		}
+
+		&_green-flag {
+			position: relative;
+			padding-left: 14px;
+			@include before(left, 0, 9px, 9px, $color-green);
+			color: $color-green;
+
+			&:before {
+				border-radius: 50%;
+				top: 2px;
+				opacity: 1;
+			}
+		}
+
+		&_green-text {
+			color: $color-green;
+		}
+
+		&_middle-red {
+			@include fontCompressor(24px, 500, 34px);
+			color: $color-red;
+
+			@include media-breakpoint-down(lg) {
+				font-size: 16px;
+			}
+		}
+
+		&_big-red {
+			@include fontCompressor(48px, 500, 67px);
+			color: $color-red;
+
+			@include media-breakpoint-down(lg) {
+				@include fontCompressor(35px, 500, 50px);
+			}
+		}
+
+		&_loaned-gray {
+			display: block;
+			width: auto;
+			color: $color-gray-400;
+		}
+
+		span {
+			display: contents;
+			font-weight: 400;
+		}
+	}
+
+	&__block {
+		padding: 20px;
+		
+		border: $border-gray;
+		border-radius: 15px;
+		height: 100%;
+
+		&_p-10 {
+			padding: 30px 10px;
+
+			@include media-breakpoint-down(xl) {
+				margin-bottom: 20px;
+			}
+			
+		}
+
+		&_p-25 {
+			padding: 25px;
+		}
+
+		@include media-breakpoint-down(xl) {
+			width: 100%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			gap: 20px;
+		}
+	}
+	
+	//Вспомогательные кнопки и секции
+	&__link-dom {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 25px;
+		margin-bottom: 80px;//new
+
+		p {
+			@include fontCompressor(16px, 300, 1);
+			color: $color-gray-400;
+
+			@include media-breakpoint-down(lg) {
+				font-size: 12px;
+			}
+
+			span {
+				color: $color-red;
+			}
+		}
+	}
+
+	&__btn-dom  {
+		display: flex;
+		padding: 0;
+		gap: 20px;
+		margin-bottom: 64px;
+
+		&_padding {
+			padding: 0 12px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 15px;
+		}
+	}
+
+	&__location {
+		display: flex;
+		gap: 10px;
+	}
+
+
+	&__name {
+		color: #767676;
+
+		h4 {
+			margin-bottom: 10px;
+			@include fontCompressor(14px, 400, 1);
+		}
+	}
+	
+}

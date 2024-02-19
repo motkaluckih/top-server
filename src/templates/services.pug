@@ -1,0 +1,39 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Услуги";
+    let currentPage = "services";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Услуги", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white";
+    let listCardProduct = [
+        {"title": "Миграция инфраструктуры в дата-центр", "text": "Преимущества очевидны: архитектура облачных решений позволяет адаптироваться к нагрузкам, а простота добавления новых сервисов."},
+        {"title": "Миграция инфраструктуры", "text": " При организации миграции в дата-центр потребуется учесть множество факторов. Переезд, как правило, выполняется из офиса."},
+        {"title": "Миграция в облако", "text": "В этом случае осуществляется транспортировка имеющегося оборудования на новый адрес."},
+        {"title": "Миграция в облако", "text": "В этом случае осуществляется транспортировка имеющегося оборудования на новый адрес."},
+        {"title": "Миграция инфраструктуры", "text": "При организации миграции в дата-центр потребуется учесть множество факторов. Переезд, как правило, выполняется из офиса."},
+        {"title": "Миграция инфраструктуры в дата-центр", "text": "Преимущества очевидны: архитектура облачных решений позволяет адаптироваться к нагрузкам, а простота добавления новых сервисов."},
+    ]
+    let area = "index"
+block content
+
+    section.product.section.section_pb100
+            .container
+                    .row
+                        .col-12.p-0
+                            .row.product-list.product-list_gap-30
+                                each item in listCardProduct
+                                    .col-12.col-md-6.col-xl-4
+                                        .product-item
+                                            .product-item__wrapper
+                                                h3.product-item__title.product-item__title_block-icon  
+                                                    +icon('cloud')
+                                                    span #{item.title}
+                                                p.product-item__text #{item.text}
+                                                .product-item__btn-dom
+                                                    a.button.button_the-arrow(href="#") Подробнее 
+                                                        +icon('more-detailed')
+    include components/_request

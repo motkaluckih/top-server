@@ -1,0 +1,61 @@
+extends layouts/_manufacturer-lk
+
+block vars
+  - 
+    let pageTitle = "Личный кабинет";
+    let currentPage = "settings";
+    let headerLk = "header_visible-lk"
+    let sidebar = "sidebar_lk"
+    let area = "lk"
+
+block content
+
+  section.lk-settings
+        h3.lk-settings__title Профиль и настройки
+        .lk-settings__slider.slider
+            ul.lk-settings__list.slider-wrapper 
+                li.lk-settings__item 
+                    a.lk-settings__btn.action Данные и интерфейс
+                li.lk-settings__item 
+                    a.lk-settings__btn Безопасность
+                li.lk-settings__item 
+                    a.lk-settings__btn API ключи
+                li.lk-settings__item 
+                    a.lk-settings__btn SSh ключи
+        .lk-settings__block
+            .card-lk.card-lk_container.action
+                h3.card-lk__title Данные профиля 
+                .row.mb-40.card-lk_padding
+                    .col-6.card-lk__block
+                        .row.card-lk__list
+                            .col-12.col-sm-5.card-lk__item Номер договора
+                                    span.card-lk__text 345089
+                            .col-12.col-sm-6.card-lk__item E-mail
+                                    span.card-lk__text topserver@gmail.com
+                            .col-12.col-sm-5.card-lk__item Владелец
+                                    span.card-lk__text Не указан
+                            .col-12.col-sm-6.card-lk__item Номер телефона
+                                    span.card-lk__text +7 (953) 567-33-45
+                            .col-12.col-sm-5.card-lk__item Тип
+                                    span.card-lk__text Физическое лицо
+                .row        
+                    .col-12.card-lk__btn-dom.card-lk__btn-dom_padding
+                            button.nav__btn.nav__btn_bg-gray
+                                span Редактировать профиль
+                                +icon("pencil")
+                            button Изменить номер
+                .row.card-lk__location    
+                    .col-12.col-xl-3.col-md-5
+                            label.form-label
+                                span Язык
+                            select.form-select
+                                option(value='1') Выберите язык
+                                option(value='2') Русский
+                                option(value='3') Английский
+                    .col-12.col-xl-3.col-md-5.p-lg-0
+                        label.form-label
+                            span Валюта
+                        select.form-select
+                            option(value='1') Выберите валюту
+                            option(value='2') Рубль
+                            option(value='3') Доллар

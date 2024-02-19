@@ -1,0 +1,73 @@
+.stages {
+      ol { 
+        @include list-reset;
+          counter-reset: item;
+          gap: 30px 0;
+
+          @include media-breakpoint-down(lg) {
+            gap: 22px 0;
+          }
+      }
+
+      li { 
+        position: relative;
+        padding: 55px 15px 14px 20px;
+        width: calc(555/1140*100%);
+        border: $border-gray;
+        border-radius: $radius;
+
+        &:nth-child(odd){
+          margin-right: calc(30/1140*100%);
+        }
+
+        @include media-breakpoint-down(xl) {
+          padding-top: 30px;
+        }
+
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+          padding: 15px;
+          min-height: 351px;
+        }
+      }
+
+      li:before { 
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 35px;
+        left: 20px;
+        width: 77px;
+        height: 84px;
+        font-size: 64px;
+        font-weight: 700;
+        content: counter(item, decimal-leading-zero) " ";
+        counter-increment: item;
+        color: $color-red;
+        text-align: center;
+      }
+
+    h3 {
+        padding-left: 87px;
+        margin-bottom: 27px;
+        color: $color-black;
+        @include fontCompressor(24px, 400, 1);
+
+          @include media-breakpoint-down(xl) {
+            padding-left: 100px;
+          }
+
+          @include media-breakpoint-down(lg) {
+            padding-left: 0;
+            padding-top: 108px;
+          }
+    }
+
+    p {
+        @include fontCompressor(16px, 300, 24px);
+
+        @include media-breakpoint-down(lg) {
+          @include fontCompressor(14px, 300, 21px);
+        }
+    }
+}

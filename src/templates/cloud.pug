@@ -1,0 +1,87 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Миграция в облако";
+    let currentPage = "services";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Услуги /", "pageColor": "null"},
+            {"title": "Миграция в облако", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let area = "index"
+
+block content
+
+    section.about.section.section_bg-gray
+        .container 
+            .row
+                .col-lg-6.pe-lg-0 
+                    img.about__img-decs(src="img/cloud.jpg", alt="Фото серверов")
+                .col-lg-5.about__left.about__left_p-45-left
+                    h2.about__title.section-title.section-title_title-small Миграция в облако
+                    img.about__img-mob(src="img/cloud.jpg", alt="Фото серверов")
+                    .about__block-text 
+                        p Первым шагом является проведение аудита, инвентаризации текущей ИТ-инфраструктуры - физические серверы, виртуальные машины, базы данных, программное обеспечение, службы и сервисы.
+                        p Принимается решение об изменении архитектуры, подбираются подходящий набор ресурсов под задачи и сервисы клиента.
+                        p Выясняется цель миграции и планируемые результаты. Выбирается оптимальная облачная стратегия.
+                    .about__btn-dom 
+                        a.button.button_transparent-red(href="#") Запросить стоимость
+    section.section.section_bg-blue.section_p-vertical.advantage
+        .container
+            .row
+                .col-12
+                        ul.row.advantage__list.advantage__list_gap-50
+                            li.col-12.col-lg-4.advantage__item 
+                                h2.section-title.section-title_title-small.section-title_color-light.section-title_lh-big IT-инфраструктура для амбициозных проектов
+                            li.col-12.col-lg-4.advantage__item 
+                                p.advantage__text.advantage__text_white  TopServer — это шесть дата-центров в Москве, Санкт-Петербурге и Ленинградской области. Мы работаем с 2008 года, на сегодняшний день у компании более 23 000 клиентов.
+                            li.col-12.col-lg-4.advantage__item 
+                                p.advantage__text.advantage__text_white Мы помогаем компаниям уделять больше внимания своим продуктам и проектам, а на себя берем обязательства по поддержке инфраструктуры.
+    section.stages.section
+        .container
+                .row.mb-3
+                    .col-12.col-lg-8
+                        h2.section-title.section-title_title-small.mb-4 Этапы миграции
+                .row
+                        .col-12
+                                ol.row
+                                    li.col-12.col-lg-6
+                                        h3 Аудит существующего IT-ландшафта и планирование
+                                        p Оценим мощности текущей инфраструктуры, определим ее слабые места, предложим решения для усиления и спланируем работы по миграции. 
+                                    li.col-12.col-lg-6
+                                        h3 Сопровождение инфраструктуры и обучение персонала
+                                        p  Будем внимательно следить за вашей инфраструктурой и контролировать ее работу. Проведем обучение удобного формата (онлайн или очно) для ваших сотрудников, расскажем об особенностях облачной инфраструктуры.
+                                    li.col-12.col-lg-6 
+                                        h3 Перенос приложений и начало работы в облаке
+                                        p Последовательно перенесем нужные сервисы в облако. Сведем к минимуму время недоступности информационных систем. Когда все будет готово, вы сможете приступать к полноценной работе в облаке.
+                                    li.col-12.col-lg-6
+                                        h3 Тестирование и пробный запуск решения 
+                                        p Проверим спроектированное решение перед переводом в опытную эксплуатацию. Так мы сможем заранее учесть все нюансы миграции, чтобы она прошла гладко.
+    section.about.section.section_bg-blue
+        .container 
+            .row.about__row.about__row_revers
+                .col-lg-5
+                    img.about__img-decs.about__img-decs_w-100(src="img/servers.png", alt="Фото серверов")
+                .col-lg-7.about__left.about__left_p-45-right
+                    h2.about__title.section-title.section-title_title-large.section-title_color-light Преимущества 
+                        span переезда в облако
+                    img.about__img-mob(src="img/servers.png", alt="Фото серверов")
+                    ul 
+                        li Аттестат ФЗ-152, ФСТЭК, ФСБ
+                            +icon('check-box')
+                        li Защита данных и резервное копирование
+                            +icon('check-box')
+                        li Бесплатный ИТ-аудит комплексного проекта
+                            +icon('check-box')
+                        li Опыт создания ИТ-инфраструктур - более 10 лет
+                            +icon('check-box')
+                        li Круглосуточный мониторинг серверов
+                            +icon('check-box')
+                        li Надежность и катастрофоустойчивость
+                            +icon('check-box')
+                    .about__btn-dom.about__btn-dom_none 
+                        a.button.button_transparent(href="#") Запросить стоимость
+    include components/_data-center
+    include components/_request

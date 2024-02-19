@@ -1,0 +1,142 @@
+.shop {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 41px;
+    }
+
+    h2 {
+        @include fontCompressor(24px, 400, 34px);
+        color: $color-black;
+    }
+
+    &__rebate-block {
+        color: $color-light;
+
+        h3  {
+            @include fontCompressor(48px, 700, 1);
+            text-transform: uppercase;
+        }
+        
+        p {
+            @include fontCompressor(24px, 400, 1);
+        }
+    }
+
+    &__btn-nav {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__btn {
+        padding: 0;
+        @include svg-converter($color-gray-400, 25px, 25px);
+
+        .icon {
+            stroke: none;
+            fill: $color-gray-400;
+        }
+
+        &_sort {
+            @include fontCompressor(14px, 400, 20px);
+            color: $color-gray-400;
+        }
+
+        &_burger {
+            &.activ {
+                .icon {
+                    fill: $color-red;
+                }
+            }
+        }
+
+        &_layout {
+            .icon {
+                fill: currentColor;
+                stroke: $color-gray-400;
+            }
+
+            &.activ {
+                .icon {
+                    stroke: $color-red;
+                }
+            }
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__product {
+        padding: 0;
+        
+            &_pt50 {
+                padding-top: 50px;
+            }
+        
+    }
+
+    &__content {
+        position: relative;
+        min-height: 411px;
+
+        h3 {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__btn-card {
+        position: absolute;
+        padding-top: 20px;
+        bottom: 0;
+        width: 100%;
+    }
+
+    &__interface {
+        display: none;
+        border: 1px solid $color-gray-200;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media-breakpoint-down(lg) {
+            display: flex;
+        }
+    }
+
+    &__selection {
+		border: none;
+		border-radius: initial;
+		padding: 14px 53px;
+		@include fontCompressor(16px, 400, 22px);
+		max-width: 174px;
+	}
+
+    &__bar {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(lg) {
+            display: flex;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+}

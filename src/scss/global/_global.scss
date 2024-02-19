@@ -1,0 +1,462 @@
+// * ====================================================================================================
+// * GLOBAL STYLES
+// * ====================================================================================================
+
+html {
+	height: 100%;
+}
+
+.container {
+	@include media-breakpoint-down(xl) {
+		padding: 0 15px;
+	}
+  }
+
+  .bg-wrapper-main {
+	background-color: $color-blue;
+  }
+
+  .bg-wrapper-page {
+		.header {
+			background-color: $color-blue;
+		}	
+
+		background-color: $color-light;
+  }
+
+  .page__wrapper  {
+
+	  &_border {
+		position: relative;
+
+		&::before {
+			content: "";
+			display: flex;
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			top: 91px;
+			background-color: #EEE;
+			z-index: 1;
+		}
+
+		@include media-breakpoint-down(lg) {
+			&::before {
+				top: 63px;
+			}
+		}
+
+  	}
+  }
+
+
+// .icon ====================================================================================================
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+// .page ====================================================================================================
+
+*:focus {
+	outline: none;
+}
+
+.page {
+	height: 100%;
+	min-height: 100%;
+	@include body;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		min-height: 100%;
+		overflow: hidden;
+	}
+}
+
+// .section ====================================================================================================
+.section {
+	padding: 100px 0;
+
+	@include media-breakpoint-down(lg) {
+		padding: 50px 0;
+	}
+	//Отступы
+	&_p-vertical {
+		padding: 70px 0 80px;
+
+		@include media-breakpoint-down(md) {
+			padding: 54px 0;
+		}
+	}
+
+	&_pb100 {
+		padding: 0 0 100px;
+		@include media-breakpoint-down(lg) {
+			padding: 0 0 50px;
+		}
+	}
+
+	&_pb120 {
+		padding: 0 0 120px;
+		@include media-breakpoint-down(xl) {
+			padding: 0 0 80px;
+		}
+	}
+
+	&_pb-160 {
+		padding-bottom: 160px;
+
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 110px;
+		}	
+	}
+
+	//цвет
+	&_bg-blue {
+		background-color: $color-blue;
+	}
+	&_bg-red {
+		background-color: $color-red;
+	}
+	&_bg-gray {
+		background-color: $color-gray-100;
+	}
+
+}
+
+// .section-title ====================================================================================================
+.section-title {
+	@include fontCompressor(36px, 700, 1);
+	color: $color-black;
+
+	@include media-breakpoint-down(xl) {
+		font-size: 28px;
+	}
+
+	
+	&_title-small {
+		@include fontCompressor(32px, 700, 1);
+		
+		@include media-breakpoint-down(xl) {
+			font-size: 28px;
+		}
+	}
+
+	&_lh-big {
+		line-height: 39px;
+	}
+	
+	&_color-light {
+		color: $color-light;
+	}
+
+}
+
+.section-link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	height: min-content;
+	text-decoration: none;
+	@include svg-converter($color-light, 47px, 25px);
+	color: $color-light;
+	transition: color $transition;
+
+	.icon {
+		transition: stroke $transition;
+	}
+
+		&:hover,
+		&:active {
+			color: $color-red-dark;
+			
+			.icon{
+				stroke: $color-red-dark;
+			}
+		}
+
+		&:focus-visible {
+			color: $color-red-default;
+
+			.icon{
+				fill:  $color-red-default;
+			}
+		}
+
+	&_color-red {
+		@include svg-converter($color-red, 47px, 25px);
+		color: $color-red;
+
+
+		&:hover,
+		&:active {
+			color: $color-blue;
+			
+			.icon{
+				stroke: $color-blue;
+			}
+		}
+
+		&:focus-visible {
+			color: $color-blue;
+
+			.icon{
+				fill:  $color-blue;
+			}
+		}
+	}
+}
+
+
+// pages======================================================================================================
+	.pages {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-bottom: 25px;
+			@include list-reset;
+			margin-bottom: 20px;
+			gap: 5px;
+		}
+		li {
+			&.active {
+				color: $color-red;
+			}
+		}
+	}
+
+//global margins ========================================================================================================================
+.pb-120 {
+	padding-bottom: 120px;
+
+	@include media-breakpoint-down(lg) {
+		padding-bottom: 80px;
+	}
+}
+
+.d-flex-gap {
+	display: flex;
+	gap: 10px;
+}
+
+.mb-mob {
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 20px;
+	}
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 20px;
+	}
+}
+
+.mb-65 {
+	margin-bottom: 65px;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 60px;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 40px;
+	}
+}
+
+.mb-55 {
+	margin-bottom: 55px;
+}
+
+.mb-60 {
+	margin-bottom: 60px;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 20px;
+	}
+}
+
+
+// Классы анимации
+.action-modal {
+	opacity: 1;
+	animation-name: open-modal;
+	animation-duration: .3s;
+}
+
+.open {
+	display: block;
+	opacity: 1;
+	animation-name: open-modal;
+	animation-duration: .3s;
+}
+
+@keyframes closed-modal {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes open-modal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}    
+
+//Табличные стили
+.table-wrapper {
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: $border-gray-300;
+	border-radius: 5px;
+
+
+	&.table {
+		&_border-none {
+			border: none;
+		}
+	}
+
+	.table__thead_gray {
+		background-color: $color-gray-250;
+	}
+
+	tr td:last-child,
+	tr th:last-child {
+		text-align: right;
+	}
+	tr td:last-child {border-radius: 0 10px 10px 0;}
+	tr td:first-child {border-radius: 10px 0 0 10px;}
+
+	thead, tr {
+		padding: .35em;
+		
+		th, td {
+			padding: 10px 30px;
+			white-space: nowrap;
+
+			.icon {
+				fill: none;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&.table__thead_stretch-w {
+			@include fontCompressor(14px, 400, 19px);
+			color: $color-gray-400;
+
+			th:nth-child(1) {
+				padding-left: 0;
+			}
+
+			th:last-child {
+				padding-right: 0px;
+				max-width: 80px;
+				text-align: left;
+			}
+		}
+
+		th {
+			@include fontCompressor(12px, 400, 17px);
+			color: #767676;
+			text-align: left;
+		}
+
+		td {
+			@include fontCompressor(12px, 400, 17px);
+			color: $color-black;	
+
+			&.text-dec {
+				text-decoration: underline;
+			}
+
+			
+				& span.green {
+					position: relative;
+					display: inline-block;
+
+					@include before(left, -10px, 7px, 7px, $color-green);
+					color: $color-green;
+					&:before {
+						border-radius: 50%;
+						top: 4px;
+						opacity: 1;
+					}
+				}
+			
+		}
+	}
+
+	tbody {
+		&.table__tbody_stretch-w {
+
+			tr td {
+				padding: 9px 30px;
+				@include fontCompressor(16px, 300, 1);
+				color: $color-black;
+
+				
+				&.table__green {
+					color: $color-green;
+				}
+			}
+
+			tr td:nth-child(1){
+				padding-left: 0;
+			}
+
+			tr td:not(:nth-child(1)){
+				padding-right: 0;
+				text-align: left;
+			}
+		}
+
+		&.table__tbody_last-right {
+			tr td:last-child {
+				text-align: right;
+			}
+		}
+	}
+
+	.table__text {
+		display: flex;
+		gap: 10px;
+		
+		p {
+			@include fontCompressor(14px, 400, 19px);
+			color: $color-gray-400;
+		}
+
+		span {
+			@include fontCompressor(16px, 300, 1);
+			color: $color-black;
+		}
+
+	}
+
+
+}

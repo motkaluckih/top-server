@@ -1,0 +1,55 @@
+.advantage {
+    &__tetle {
+		@include fontCompressor(24px, 700, 1);
+		color: $color-black;
+
+		span {
+			display: flex;
+		}
+    }
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+
+		&_gap-35 {
+			@include media-breakpoint-down(lg) {
+				gap: 35px;
+			}
+		}
+
+		&_gap-50 {
+			@include media-breakpoint-down(lg) {
+				gap: 50px;
+			}
+		}
+
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		gap: 20px;
+
+		@include svg-converter($color-red, 51px, 45px);
+			
+		&_w-30 {
+			max-width: calc(348/1140*100%);
+
+			@include media-breakpoint-down(lg) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__text {
+		max-width: 100%;
+
+		&_white {
+			color: $color-light;
+		}
+		
+	}
+
+}

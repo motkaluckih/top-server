@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="css/bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="page">
+  <div class="page__wrapper page__wrapper_border nav">
+    <div class="container">
+      <div class="nav__wrapper">
+        <div class="sidebar sidebar_lk sidebar-close" id="sidebar">
+          <div class="container-fluid">
+            <div class="row sidebar-lk">
+              <div class="col-12 p-0">
+                <div class="sidebar-lk__left">
+                  <a class="sidebar-lk__logo" href="./">
+                    <img class="sidebar__img" src="/assets/templates/10/img/logo-page.svg" alt="логотип TOP SERVER">
+                  </a>
+                  <a class="burger-close burger-close_position" id="closeSidebar" href="javascript:void(0);">
+                    <svg class="icon">
+                      <use xlink:href="/assets/templates/10/img/sprite.svg#close"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="sidebar-lk__group">
+                  <h2>+<span>Заказать</span>
+                  </h2>
+                  <ul class="sidebar-lk__list">
+                    <li>
+                      <a class="sidebar-lk__btn active" href="./dedicated-servers.html">Выделенные сервера </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./">Виртуальные сервера </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./">ip адреса </a>
+                    </li>
+                    <li data-accordion="FAQ">
+                      <button class="sidebar-lk__btn sidebar-lk__btn_arrow" data-accordion-top>Услуги <svg class="icon">
+                          <use xlink:href="/assets/templates/10/img/sprite.svg#list-arrow"></use>
+                        </svg>
+                      </button>
+                      <ul class="sidebar-lk__list sidebar-lk__list_dropDown" data-accordion-body>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция в облако</span>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция инфраструктуры</span>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="sidebar-lk__btn sidebar-lk__btn_red-icon">
+                            <svg class="icon">
+                              <use xlink:href="/assets/templates/10/img/sprite.svg#cloud"></use>
+                            </svg>
+                            <span>Миграция инфраструктуры в дата-центр</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sidebar-lk__group">
+                  <h2>
+                    <span>Мой профиль</span>
+                  </h2>
+                  <ul class="sidebar-lk__list sidebar-lk__list_bottom">
+                    <li>
+                      <a class="sidebar-lk__btn" href="./my-services.html">Мои услуги </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./finance.html">Финансы </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./referral.html">Реферальная система </a>
+                    </li>
+                    <li>
+                      <a class="sidebar-lk__btn" href="./settings.html">Настройки </a>
+                    </li>
+                  </ul>
+                  <div class="sidebar-lk__help-block">
+                    <a class="sidebar-lk__help" href="help.html">
+                      <svg class="icon">
+                        <use xlink:href="/assets/templates/10/img/sprite.svg#search"></use>
+                      </svg>
+                      <span>Поддержка</span>
+                    </a>
+                    <p>Бесплатная консультация</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="row">
+            <div class="col-12 p-0">
+              <nav>
+                <a class="nav__burger" href="javascript:void(0)">
+                  <svg class="icon">
+                    <use xlink:href="/assets/templates/10/img/sprite.svg#burger"></use>
+                  </svg>
+                </a>
+                <ul class="nav__bottom-list">
+                  <li>
+                    <button class="nav__btn">1900 ₽</button>
+                  </li>
+                  <li>
+                    <a class="nav__btn" href="mailto:topserver@gmail.com">topserver@gmail.com</a>
+                  </li>
+                  <li>
+                    <a class="nav__btn nav__btn_color-red nav__btn_bg-gray" href="./">
+                      <span>Выйти</span>
+                      <svg class="icon">
+                        <use xlink:href="/assets/templates/10/img/sprite.svg#entrance"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 p-0">
+              <section class="lk-settings action">
+                <h3 class="lk-settings__title mb-65">Ваш новый выделенный сервер </h3>
+                <div class="row card-lk">
+                  <div class="col-12">
+                    <div class="card-lk__name mb-65">
+                      <h4>Название</h4>
+                      <button class="nav__btn nav__btn_circle-10">123topserver010</button>
+                    </div>
+                  </div>
+                  <div class="col-8 col-sm-6 mb-65">
+                    <div class="form-btn form-btn_position-img">
+                      <img src="/assets/templates/10/img/rus.png" alt="Флаг России">
+                      <label class="form-label">
+                        <select class="form-select form-select_center">
+                          <option value="1">Выбор локации</option>
+                          <option value="2">Русский</option>
+                          <option value="3">Английский </option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 p-0 mb-65">
+                    <div class="row product-list product-list_gap-30">
+                      <div class="col-12">
+                        <div class="product-item product-item_rectangle">
+                          <div class="product-item__wrapper">
+                            <h3 class="product-item__title">CL21R-SSD</h3>
+                            <ul class="row product-item__list product-item__list_row">
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#cpu"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Процессор</p>
+                                  <span>Intel E5-2696v4 22 core</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#inbox"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Память</p>
+                                  <span>64 GB DDR4</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">25 450 ₽ </p>
+                                  <span>в месяц за сервер</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#speed-one"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Диски</p>
+                                  <span>2х480 GB SSD</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#sphere"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Приватная сеть </p>
+                                  <span>10 ГБит/сек</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">1 250 ₽ </p>
+                                  <span>установка сервера</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-2 product-item__element product-item__element_center">
+                                <div class="product-item__btn-dom product-item__btn-dom_end">
+                                  <button class="button button_main button_transparent-red">Заказать</button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="product-item product-item_rectangle">
+                          <div class="product-item__wrapper">
+                            <h3 class="product-item__title">CL21R-SSD</h3>
+                            <ul class="row product-item__list product-item__list_row">
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#cpu"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Процессор</p>
+                                  <span>Intel E5-2696v4 22 core</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#inbox"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Память</p>
+                                  <span>64 GB DDR4</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">25 450 ₽ </p>
+                                  <span>в месяц за сервер</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#speed-one"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Диски</p>
+                                  <span>2х480 GB SSD</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#sphere"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Приватная сеть </p>
+                                  <span>10 ГБит/сек</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">1 250 ₽ </p>
+                                  <span>установка сервера</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-2 product-item__element product-item__element_center">
+                                <div class="product-item__btn-dom product-item__btn-dom_end">
+                                  <button class="button button_main button_transparent-red">Заказать</button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="product-item product-item_rectangle">
+                          <div class="product-item__wrapper">
+                            <h3 class="product-item__title">CL21R-SSD</h3>
+                            <ul class="row product-item__list product-item__list_row">
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#cpu"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Процессор</p>
+                                  <span>Intel E5-2696v4 22 core</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#inbox"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Память</p>
+                                  <span>64 GB DDR4</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">25 450 ₽ </p>
+                                  <span>в месяц за сервер</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#speed-one"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Диски</p>
+                                  <span>2х480 GB SSD</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#sphere"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Приватная сеть </p>
+                                  <span>10 ГБит/сек</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">1 250 ₽ </p>
+                                  <span>установка сервера</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-2 product-item__element product-item__element_center">
+                                <div class="product-item__btn-dom product-item__btn-dom_end">
+                                  <button class="button button_main button_transparent-red">Заказать</button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="product-item product-item_rectangle">
+                          <div class="product-item__wrapper">
+                            <h3 class="product-item__title">CL21R-SSD</h3>
+                            <ul class="row product-item__list product-item__list_row">
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#cpu"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Процессор</p>
+                                  <span>Intel E5-2696v4 22 core</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#inbox"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Память</p>
+                                  <span>64 GB DDR4</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">25 450 ₽ </p>
+                                  <span>в месяц за сервер</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#speed-one"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Диски</p>
+                                  <span>2х480 GB SSD</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#sphere"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Приватная сеть </p>
+                                  <span>10 ГБит/сек</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">1 250 ₽ </p>
+                                  <span>установка сервера</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-2 product-item__element product-item__element_center">
+                                <div class="product-item__btn-dom product-item__btn-dom_end">
+                                  <button class="button button_main button_transparent-red">Заказать</button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="product-item product-item_rectangle">
+                          <div class="product-item__wrapper">
+                            <h3 class="product-item__title">CL21R-SSD</h3>
+                            <ul class="row product-item__list product-item__list_row">
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#cpu"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Процессор</p>
+                                  <span>Intel E5-2696v4 22 core</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#inbox"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Память</p>
+                                  <span>64 GB DDR4</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">25 450 ₽ </p>
+                                  <span>в месяц за сервер</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-4 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#speed-one"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Диски</p>
+                                  <span>2х480 GB SSD</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element">
+                                <svg class="icon">
+                                  <use xlink:href="/assets/templates/10/img/sprite.svg#sphere"></use>
+                                </svg>
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_black product-item__name_size-14">Приватная сеть </p>
+                                  <span>10 ГБит/сек</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-3 product-item__element product-item__element_center">
+                                <div class="product-item__right product-item__right_small">
+                                  <p class="product-item__name product-item__name_red product-item__name_size-14">1 250 ₽ </p>
+                                  <span>установка сервера</span>
+                                </div>
+                              </li>
+                              <li class="col-12 col-md-6 col-xl-2 product-item__element product-item__element_center">
+                                <div class="product-item__btn-dom product-item__btn-dom_end">
+                                  <button class="button button_main button_transparent-red">Заказать</button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="card-lk__title card-lk__title_small">Общая информация о сервере </h3>
+                    <div class="lk-settings__slider slider">
+                      <ul class="lk-settings__list slider-wrapper">
+                        <li class="lk-settings__item">
+                          <a class="lk-settings__btn action">Операционная система</a>
+                        </li>
+                        <li class="lk-settings__item">
+                          <a class="lk-settings__btn">Предустановленное ПО</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="lk-system lk-system_pb-65">
+                      <div class="row lk-system__list mb-65">
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Ubuntu.png" alt="логотип TOP SERVER">
+                              <p>Ubuntu</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">22.04</option>
+                                  <option value="1">23.04</option>
+                                  <option value="1">24.04</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Debian.png" alt="логотип TOP SERVER">
+                              <p>Debian</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">11</option>
+                                  <option value="1">12</option>
+                                  <option value="1">13</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/CentOS.png" alt="логотип TOP SERVER">
+                              <p>CentOS</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">9 stream</option>
+                                  <option value="1">10 stream</option>
+                                  <option value="1">11 stream</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Alma.png" alt="логотип TOP SERVER">
+                              <p>Alma</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">Linux 9</option>
+                                  <option value="1">Linux 9</option>
+                                  <option value="1">Linux 9</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Rocky.png" alt="логотип TOP SERVER">
+                              <p>Rocky</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">Linux 9</option>
+                                  <option value="1">Linux 9</option>
+                                  <option value="1">Linux 9</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Astra.png" alt="логотип TOP SERVER">
+                              <p>Astra</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">Linux CE</option>
+                                  <option value="1">Linux CE</option>
+                                  <option value="1">Linux CE</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/FreeBSD.png" alt="логотип TOP SERVER">
+                              <p>FreeBSD</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">12</option>
+                                  <option value="1">12</option>
+                                  <option value="1">12</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/WindowsServer.png" alt="логотип TOP SERVER">
+                              <p>Windows Server</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">2012</option>
+                                  <option value="1">2012</option>
+                                  <option value="1">2012</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 lk-system__block">
+                          <div class="lk-system__wrapper">
+                            <div class="lk-system__top">
+                              <img src="/assets/templates/10/img/the-system/Windows.png" alt="логотип TOP SERVER">
+                              <p>Windows</p>
+                            </div>
+                            <div class="form-btn form-btn_gray-center">
+                              <label class="form-label">
+                                <select class="form-select form-select_transparent-center">
+                                  <option value="1">11</option>
+                                  <option value="1">11</option>
+                                  <option value="1">11</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-5">
+                          <label class="form-label"></label>
+                          <select class="form-select form-select_w-container">
+                            <option value="1">Выбор периода оплаты и оформления заказа</option>
+                            <option value="1">01.01.2023 по 01.02.2023</option>
+                            <option value="1">01.06.2023 по 01.12.2023</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row lk-results">
+                  <div class="col-12 col-sm-8">
+                    <h3>Итого</h3>
+                    <div class="lk-results__left">
+                      <h4 class="lk-results__name">CL21R-SSD</h4>
+                      <div class="lk-results__btn-dom">
+                        <button>
+                          <span>-</span>
+                        </button>
+                        <span class="lk-results__quantity">1</span>
+                        <button>
+                          <span>+ </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="lk-results__server">
+                      <ul>
+                        <li>Установочный платеж: 1 250 ₽</li>
+                        <li>
+                          <svg class="icon">
+                            <use xlink:href="/assets/templates/10/img/sprite.svg#choice"></use>
+                          </svg>
+                          <span>DDoS защита</span>
+                        </li>
+                        <li>
+                          <svg class="icon">
+                            <use xlink:href="/assets/templates/10/img/sprite.svg#choice"></use>
+                          </svg>
+                          <span>Помощь в установке</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-4 lk-results__right">
+                    <div class="lk-results__container">
+                      <p class="lk-results__payment">25 450 ₽</p>
+                      <div class="colp">
+                        <button class="button lk-results__btn button_transparent-red">Оплатить</button>
+                        <div class="form">
+                          <div class="form__checkbox checkbox">
+                            <input class="custom-checkbox" id="one" type="checkbox" name="pers">
+                            <label for="one">
+                              <span>Автопродление</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+extends layouts/_default
+
+block vars
+  - 
+    let pageTitle = "Серверы";
+    let currentPage = "servers";
+    let listPage = [
+            {"title": "Главная /", "pageColor": "null"},
+            {"title": "Серверы", "pageColor": "color"},
+        ]
+    let headerColor = "bg-white"
+    let listCardProduct = [
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+        {"title": "CL21R-SSD", "processor": "Intel E5-2696v4 22 core", "memory": "64 GB DDR4", "disks": "2х480 GB SSD", "network": "10 ГБит/сек"},
+    ]
+    let area = "index"
+    
+block content
+    section.section.section_pb100.shop
+        .container
+                .row.mb-5.mb-lg-4 
+                    .col-4.d-none.d-lg-flex
+                        h2 Фильтры
+                    .col-8.d-none.d-lg-flex.justify-content-between
+                        button.button.shop__btn.shop__btn_sort Сортировать по цене
+                            +icon("list-arrow")
+                        .shop__btn-nav
+                            button.button.shop__btn.shop__btn_burger(data-btn='list')
+                                +icon("burger")
+                            button.button.shop__btn.shop__btn_layout.activ(data-btn='grid')
+                                +icon("layout")
+                    .col-12.d-flex.justify-content-center
+                        .shop__interface 
+                            button.button.button_selection.button_transparent-red.button_servers.activ(data-option='content') Серверы
+                            button.button.button_selection.button_transparent-red.button_filter(data-option='interface') Фильтры
+                .row 
+                    .col-12.col-lg-4.shop__bar.d-none.d-lg-flex(data-section='interface')
+                        .shop__form.form
+                            .form__group
+                                h3.form__suptitl Количество процессоров
+                                .form__checkbox
+                                    .checkbox
+                                        input#one.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='one')
+                                            span 1
+                                .form__checkbox
+                                    .checkbox
+                                        input#two.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='two')
+                                            span 2
+                            .form__group
+                                h3.form__suptitl Ядра
+                                .form-slider.form-slider-red
+                                    input.form-slider__input(type='text' value="8")
+                                    input.form-slider__range(type='range' step='1' min='7' max='35' value='12')
+                            .form__group(data-accordion='FAQ')
+                                button.form__suptitl.d-flex(data-accordion-top) Процессор
+                                    +icon("list-arrow")
+                                .form__block(data-accordion-body)
+                                    .form__checkbox
+                                        .checkbox
+                                            input#i7-8700.custom-checkbox(type='checkbox' name='pers')
+                                            label(for='i7-8700')
+                                                span Intel Core i7-8700
+                                    .form__checkbox
+                                        .checkbox
+                                            input#E-2386G.custom-checkbox(type='checkbox' name='pers')
+                                            label(for='E-2386G')
+                                                span Intel Xeon E-2386G
+                                    .form__checkbox
+                                        .checkbox
+                                            input#W-2255.custom-checkbox(type='checkbox' name='pers')
+                                            label(for='W-2255')
+                                                span Intel Xeon W-2255
+                                    .form__checkbox
+                                        .checkbox
+                                            input#E-2236.custom-checkbox(type='checkbox' name='pers')
+                                            label(for='E-2236')
+                                                span Intel Xeon E-2236
+                                    .form__checkbox
+                                        .checkbox
+                                            input#E-2237.custom-checkbox(type='checkbox' name='pers')
+                                            label(for='E-2237')
+                                                span Intel Xeon E-2236
+                                    .form__checkbox
+                                    .checkbox
+                                        input#E3-1230v5.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='E3-1230v5')
+                                            span Intel Xeon E3-1230v5
+                            .form__group
+                                h3.form__suptitl Память
+                                .form-slider.form-slider-red
+                                    input.form-slider__input(type='text' value="16 GB")
+                                    input.form-slider__range(type='range' step='1' min='7' max='100' value='12')
+                            .form__group
+                                h3.form__suptitl Диски
+                                .form__checkbox
+                                    .checkbox
+                                        input#HDD-SATA.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='HDD-SATA')
+                                            span HDD SATA
+                                .form__checkbox
+                                    .checkbox
+                                        input#SSD-SATA.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='SSD-SATA')
+                                            span SSD SATA
+                                .form__checkbox
+                                    .checkbox
+                                        input#SSD-NVMe.custom-checkbox(type='checkbox' name='pers')
+                                        label(for='SSD-NVMe')
+                                            span SSD NVMe
+                            .form__group
+                                h3.form__suptitl Цена,₽
+                                .form-slider.form-slider-red
+                                    input.form-slider__input(type='text' value="1200₽")
+                                    input.form-slider__range(type='range' step='1000' min='1000' max='35000' value='12')
+                        .product.shop__product.shop__product_pt50
+                            .product-item
+                                .product-item__wrapper
+                                    .shop__rebate-block
+                                        .shop__img 
+                                            img(src="img/discounts.png", alt="серверы")
+                                        .shop__content
+                                            h3 Получите скидку 
+                                            p на аренду первого выделенного сервера
+                                            .shop__btn-card
+                                                a.button.button_transparent(href="#") Получить                     
+                    .col-12.col-lg-8.shop__product.shop__product_content.product(data-section='content')
+                        .row.product-list.product-list_gap-25(data-card='grid') 
+                            each item in listCardProduct
+                                .col-12.col-md-6
+                                    .product-item
+                                        .product-item__wrapper
+                                            h3.product-item__title #{item.title}
+                                            ul.product-item__list
+                                                li.product-item__element 
+                                                    +icon('cpu')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Процессор
+                                                        span #{item.processor}
+                                                li.product-item__element 
+                                                    +icon('inbox')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Память
+                                                        span #{item.memory}
+                                                li.product-item__element 
+                                                    +icon('speed-one')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Диски
+                                                        span #{item.disks}
+                                                li.product-item__element 
+                                                    +icon('sphere')
+                                                    .product-item__right
+                                                        p.product-item__name.product-item__name_black Приватная сеть 
+                                                        span #{item.network}
+                                            .product-item__btn-dom.product-item__btn-dom_pt-0
+                                                button.button.button_transparent-red.product-item__btn Заказать
+
+
+                        .row.product-list.product-list_gap-25.d-none(data-card='list')
+                            each item in listCardProduct
+                                .col-12
+                                    .product-item.product-item_rectangle
+                                            .product-item__wrapper
+                                                h3.product-item__title #{item.title}
+                                                ul.row.product-item__list.product-item__list_row 
+                                                    li.col-12.col-md-5.product-item__element 
+                                                        +icon('cpu')
+                                                        .product-item__right
+                                                            p.product-item__name.product-item__name_black Процессор
+                                                            span #{item.processor}
+                                                    li.col-12.col-md-5.product-item__element 
+                                                        +icon('inbox')
+                                                        .product-item__right
+                                                            p.product-item__name.product-item__name_black Память
+                                                            span #{item.memory}
+                                                    li.col-12.col-md-5.product-item__element 
+                                                        +icon('speed-one')
+                                                        .product-item__right
+                                                            p.product-item__name.product-item__name_black Диски
+                                                            span #{item.disks}
+                                                    li.col-12.col-md-5.product-item__element 
+                                                        +icon('sphere')
+                                                        .product-item__right
+                                                            p.product-item__name.product-item__name_black Приватная сеть 
+                                                            span #{item.network}
+                                                .product-item__btn-dom.product-item__btn-dom_mob
+                                                    button.button.button_red.button_pos-right Заказать
+
+                .row.d-flex.flex-column 
+                    .col-12.shop__pagination
+                            ul.pagination
+                                li.control.disabled.item-none
+                                    button.button.button_the-arrow.pagination__btn.pagination__btn_prev
+                                        +icon('more-detailed')
+                                li.active
+                                    a(href="#") 1
+                                li
+                                    a(href="#") 2
+                                li
+                                    a(href="#") 3
+                                li.control.item-none
+                                    button.button.button_the-arrow.pagination__btn
+                                        +icon('more-detailed')
+                    .col-12.d-flex.justify-content-center.d-lg-none.pt-2
+                        a.section-link.section-link_color-red(href="#") Смотреть все
+                            +icon('the-arrow')
+    include components/_request
